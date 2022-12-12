@@ -1,0 +1,25 @@
+PODS:
+  - NetworkUtilsKit (2.2):
+    - NetworkUtilsKit/Core (= 2.2)
+  - NetworkUtilsKit/Core (2.2):
+    - UtilsKit (~> 2.4)
+  - UtilsKit (2.7):
+    - UtilsKit/Core (= 2.7)
+  - UtilsKit/Core (2.7)
+
+DEPENDENCIES:
+  - NetworkUtilsKit
+  - UtilsKit
+
+SPEC REPOS:
+  trunk:
+    - NetworkUtilsKit
+    - UtilsKit
+
+SPEC CHECKSUMS:
+  NetworkUtilsKit: 683414341c4092ea137caae0952a60a4622439f6
+  UtilsKit: ec424991b3dd84a916a9eff75598fa00d041fb92
+
+PODFILE CHECKSUM: 034e5f9fe68796e164614ba40dae30724af193c3
+
+COCOAPODS: 1.11.3
