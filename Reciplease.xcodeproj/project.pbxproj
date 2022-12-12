@@ -26,6 +26,7 @@
 		D5DBF3DC2947898C00EEECAE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */; };
 		D5DBF3DD2947898C00EEECAE /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */; };
 		D5DBF3DE2947898C00EEECAE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */; };
+		D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DBF3E029478C7100EEECAE /* Favorites.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
 		D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		D5DBF3E029478C7100EEECAE /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */,
 				D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */,
 				D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */,
+				D5DBF3E029478C7100EEECAE /* Favorites.storyboard */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				D59F3F4129472B440003818F /* LaunchScreen.storyboard in Resources */,
 				D5DBF3D4294788B400EEECAE /* Colors.xcassets in Resources */,
+				D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */,
 				D59F3F3E29472B440003818F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
