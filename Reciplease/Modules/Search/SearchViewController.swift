@@ -24,8 +24,6 @@ class SearchViewController: BaseViewController
 	// MARK: - Refresh
 	override func refreshUI() {
 		super.refreshUI()
-        
-        self.viewModel.results
 	}
 
 	// MARK: - Actions
