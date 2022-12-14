@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CDC9662D652ACA37AFF4E6AB /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1BFA1C60C12F8532967F57 /* Pods_Reciplease.framework */; };
 		D569C59C2949D53600F86EBF /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D569C59B2949D53600F86EBF /* TabBar.storyboard */; };
+		D569C59F294A0DAA00F86EBF /* SearchSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C59E294A0DAA00F86EBF /* SearchSectionHeader.swift */; };
+		D569C5A1294A0DB600F86EBF /* SearchSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D569C5A0294A0DB600F86EBF /* SearchSectionHeader.xib */; };
+		D569C5A6294A178300F86EBF /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C5A5294A178300F86EBF /* APIRequest.swift */; };
+		D569C5A8294A1E1D00F86EBF /* RecipesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C5A7294A1E1D00F86EBF /* RecipesWorker.swift */; };
 		D59F3F3529472B410003818F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F3F3429472B410003818F /* AppDelegate.swift */; };
 		D59F3F3729472B410003818F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F3F3629472B410003818F /* SceneDelegate.swift */; };
 		D59F3F3E29472B440003818F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59F3F3D29472B440003818F /* Images.xcassets */; };
@@ -36,6 +40,10 @@
 		CD367923A9B6BA637161B2F5 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		CEAB76DA42E321051F1F2FBB /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		D569C59B2949D53600F86EBF /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		D569C59E294A0DAA00F86EBF /* SearchSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionHeader.swift; sourceTree = "<group>"; };
+		D569C5A0294A0DB600F86EBF /* SearchSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSectionHeader.xib; sourceTree = "<group>"; };
+		D569C5A5294A178300F86EBF /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		D569C5A7294A1E1D00F86EBF /* RecipesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesWorker.swift; sourceTree = "<group>"; };
 		D59F3F3129472B410003818F /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59F3F3429472B410003818F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D59F3F3629472B410003818F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +105,39 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		D569C59D294A0D8400F86EBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D569C59E294A0DAA00F86EBF /* SearchSectionHeader.swift */,
+				D569C5A0294A0DB600F86EBF /* SearchSectionHeader.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D569C5A2294A174E00F86EBF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D569C5A4294A176E00F86EBF /* Response */,
+				D569C5A3294A175F00F86EBF /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D569C5A3294A175F00F86EBF /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D569C5A5294A178300F86EBF /* APIRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D569C5A4294A176E00F86EBF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		D59F3F2829472B410003818F = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +159,7 @@
 		D59F3F3329472B410003818F /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				D569C5A2294A174E00F86EBF /* Network */,
 				D5DBF3C72947780400EEECAE /* Modules */,
 				D59F3F4C2947318D0003818F /* Workers */,
 				D5DBF3D12947883E00EEECAE /* Helpers */,
@@ -129,6 +171,7 @@
 		D59F3F4C2947318D0003818F /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				D569C5A7294A1E1D00F86EBF /* RecipesWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -159,6 +202,7 @@
 		D5DBF3C82947781100EEECAE /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D569C59D294A0D8400F86EBF /* Views */,
 				D5DBF3C92947786D00EEECAE /* SearchPresenter.swift */,
 				D5DBF3CA2947786D00EEECAE /* SearchViewController.swift */,
 				D5DBF3CB2947786D00EEECAE /* SearchInteractor.swift */,
@@ -274,6 +318,7 @@
 				D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */,
 				D59F3F3E29472B440003818F /* Images.xcassets in Resources */,
 				D569C59C2949D53600F86EBF /* TabBar.storyboard in Resources */,
+				D569C5A1294A0DB600F86EBF /* SearchSectionHeader.xib in Resources */,
 				D5DBF3E329478CD900EEECAE /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,14 +395,17 @@
 				D5DBF3C2294777BE00EEECAE /* BaseViewController.swift in Sources */,
 				D5DBF3DD2947898C00EEECAE /* FavoritesInteractor.swift in Sources */,
 				D5DBF3CE2947786D00EEECAE /* SearchViewController.swift in Sources */,
+				D569C5A8294A1E1D00F86EBF /* RecipesWorker.swift in Sources */,
 				D5DBF3DB2947898C00EEECAE /* FavoritesPresenter.swift in Sources */,
 				D5DBF3CD2947786D00EEECAE /* SearchPresenter.swift in Sources */,
 				D5DBF3C5294777BE00EEECAE /* Presenter.swift in Sources */,
+				D569C59F294A0DAA00F86EBF /* SearchSectionHeader.swift in Sources */,
 				D5DBF3D02947786D00EEECAE /* SearchViewModel.swift in Sources */,
 				D59F3F3529472B410003818F /* AppDelegate.swift in Sources */,
 				D5DBF3CF2947786D00EEECAE /* SearchInteractor.swift in Sources */,
 				D5DBF3C3294777BE00EEECAE /* ViewModel.swift in Sources */,
 				D5DBF3C4294777BE00EEECAE /* Interactor.swift in Sources */,
+				D569C5A6294A178300F86EBF /* APIRequest.swift in Sources */,
 				D59F3F3729472B410003818F /* SceneDelegate.swift in Sources */,
 				D5DBF3C6294777BE00EEECAE /* LoaderView.swift in Sources */,
 			);
