@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CDC9662D652ACA37AFF4E6AB /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1BFA1C60C12F8532967F57 /* Pods_Reciplease.framework */; };
+		D569C59C2949D53600F86EBF /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D569C59B2949D53600F86EBF /* TabBar.storyboard */; };
 		D59F3F3529472B410003818F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F3F3429472B410003818F /* AppDelegate.swift */; };
 		D59F3F3729472B410003818F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F3F3629472B410003818F /* SceneDelegate.swift */; };
 		D59F3F3E29472B440003818F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59F3F3D29472B440003818F /* Images.xcassets */; };
@@ -34,6 +35,7 @@
 		4B1BFA1C60C12F8532967F57 /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD367923A9B6BA637161B2F5 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		CEAB76DA42E321051F1F2FBB /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
+		D569C59B2949D53600F86EBF /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D59F3F3129472B410003818F /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59F3F3429472B410003818F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D59F3F3629472B410003818F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D569C59A2949D51E00F86EBF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D569C59B2949D53600F86EBF /* TabBar.storyboard */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		D59F3F2829472B410003818F = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		D5DBF3C72947780400EEECAE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D569C59A2949D51E00F86EBF /* TabBar */,
 				D5DBF3D5294788CD00EEECAE /* App */,
 				D5DBF3D62947897500EEECAE /* Favorites */,
 				D5DBF3C82947781100EEECAE /* Search */,
@@ -262,6 +273,7 @@
 				D5DBF3D4294788B400EEECAE /* Colors.xcassets in Resources */,
 				D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */,
 				D59F3F3E29472B440003818F /* Images.xcassets in Resources */,
+				D569C59C2949D53600F86EBF /* TabBar.storyboard in Resources */,
 				D5DBF3E329478CD900EEECAE /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,8 +503,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,8 +535,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
