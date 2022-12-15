@@ -31,6 +31,9 @@
                             <constraint firstItem="ym2-z4-rSa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xgd-r2-Z7e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recipeTableView" destination="ym2-z4-rSa" id="9Af-eK-aS7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
