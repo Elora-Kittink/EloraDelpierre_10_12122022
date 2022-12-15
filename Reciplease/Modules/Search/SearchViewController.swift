@@ -34,7 +34,6 @@ class SearchViewController: BaseViewController
 	override func refreshUI() {
 		super.refreshUI()
         searchTable.reloadData()
-        print(self.viewModel.ingredientsAdded)
 	}
 
 	// MARK: - Actions
@@ -47,7 +46,9 @@ class SearchViewController: BaseViewController
     
     @IBAction private func searchForRecipes() {
 //        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
-        self.navigationController?.pushViewController(RecipesListViewController.fromStoryboard(), animated: true)
+        let viewController = RecipesListViewController.fromStoryboard()
+        viewController.ingredientsSearch = self.viewModel.ingredientsAdded
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
