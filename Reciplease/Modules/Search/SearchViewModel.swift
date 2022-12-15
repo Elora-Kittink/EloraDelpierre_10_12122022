@@ -5,7 +5,5 @@
 
 class SearchViewModel: ViewModel {
     
-    var results: [AnyObject]?
     var ingredientsAdded: [String] = []
-    
 }

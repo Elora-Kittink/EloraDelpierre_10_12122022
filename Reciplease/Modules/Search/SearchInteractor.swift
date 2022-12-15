@@ -9,7 +9,11 @@ class SearchInteractor: Interactor
 	SearchPresenter
 > {
     
-    func refresh() {
-        self.presenter.display()
+    func add(_ ingredient: String) {
+        self.presenter.display(newIngredients: ingredient)
+    }
+    
+    func clear() {
+        self.presenter.clear()
     }
 }

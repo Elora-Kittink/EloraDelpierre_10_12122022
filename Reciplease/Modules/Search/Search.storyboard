@@ -45,6 +45,9 @@
                                                             <rect key="frame" x="170.33333333333331" y="0.0" width="54.666666666666657" height="85.333333333333329"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                                            <connections>
+                                                                <action selector="addIngredients" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xyL-XK-aAH"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -63,24 +66,16 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="78P-cw-pRh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientCell" id="K2z-js-Ccu">
                                         <rect key="frame" x="0.0" y="226.33333206176758" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78P-cw-pRh" id="FnY-qR-hiW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K2z-js-Ccu" id="sHO-he-Wfd">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heP-MZ-RU7">
-                                                    <rect key="frame" x="49" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfV-2P-Jea">
                                 <rect key="frame" x="95" y="730" width="200" height="50"/>
@@ -90,6 +85,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Search for recipes"/>
+                                <connections>
+                                    <action selector="searchForRecipes" destination="Y6W-OH-hqX" eventType="touchUpInside" id="P54-sS-wve"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -104,9 +102,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SearchTable" destination="fsk-gq-n5i" id="ccJ-bM-oMu"/>
-                        <outlet property="ingredientLabel" destination="heP-MZ-RU7" id="L8k-bE-U0w"/>
                         <outlet property="searchButton" destination="wfV-2P-Jea" id="n6j-Sn-0cq"/>
+                        <outlet property="searchTable" destination="fsk-gq-n5i" id="e4m-pW-OWt"/>
+                        <outlet property="textField" destination="gYB-KW-ITa" id="Shl-M8-P6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

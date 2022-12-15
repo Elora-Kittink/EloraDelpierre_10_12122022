@@ -5,8 +5,14 @@
 
 class SearchPresenter: Presenter<SearchViewModel> {
     
-    func display() {
-        self.viewModel?.results = []
+    func clear() {
+        self.viewModel?.ingredientsAdded = []
+        self.viewModel?.send()
+    }
+    
+    func display(newIngredients: String) {
+        let set = Set<String>(self.viewModel?.ingredientsAdded ?? []).union([newIngredients])
+        self.viewModel?.ingredientsAdded = Array(set) 
         self.viewModel?.send()
     }
 }

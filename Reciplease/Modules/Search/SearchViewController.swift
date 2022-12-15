@@ -16,9 +16,9 @@ class SearchViewController: BaseViewController
     
 	
 	// MARK: - Outlets
-    @IBOutlet weak var searchTable: UITableView!
-    @IBOutlet weak var ingredientLabel: UILabel!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet private weak var searchTable: UITableView!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var textField: UITextField!
     
 	// MARK: - Variables
 	
@@ -27,27 +27,28 @@ class SearchViewController: BaseViewController
 		super.viewDidLoad()
         searchTable.dataSource = self
         searchTable.delegate = self
-        
-        Task {
-            let data = try? await RecipesWorker().fetchRecipes(ingredients: ["milk"])
-            log(.data, data)
-        }
-        
-        self.interactor.refresh()
+        self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
 	}
 	
 	// MARK: - Refresh
 	override func refreshUI() {
 		super.refreshUI()
+        searchTable.reloadData()
+        print(self.viewModel.ingredientsAdded)
 	}
 
 	// MARK: - Actions
+    @IBAction private func addIngredients() {
+        guard let ingredient = self.textField.text
+        else { return }
+        
+        self.interactor.add(ingredient)
+    }
     
     @IBAction private func searchForRecipes() {
-        
+//        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
+        self.navigationController?.pushViewController(RecipesListViewController.fromStoryboard(), animated: true)
     }
-
-
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -55,6 +56,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         // ici ma vue "your ingredients"
         let view = SearchSectionHeader.fromNib()
+        view.delegate = self
         return view
     }
     
@@ -62,26 +64,21 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         50
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        self.viewModel.ingredientsAdded.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = searchTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "TEST section \(indexPath.section), row \(indexPath.row)"
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+        
+        cell.textLabel?.text = self.viewModel.ingredientsAdded[indexPath.row]
+               
         return cell
     }
 }
 
 extension SearchViewController: SearchSectionHeaderDelegate {
     func didTapClear() {
-        // vider les ingrédients choisis
-        // est ce que ça devrait pas plutot etre dans l'interactor ou le presenter? 
+        self.interactor.clear()
     }
-    
-    
 }
