@@ -26,11 +26,12 @@
                         <color key="backgroundColor" red="0.71341250099999998" green="0.40962786750000002" blue="0.39762009199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ym2-z4-rSa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8Sz-hp-moc"/>
-                            <constraint firstAttribute="bottom" secondItem="ym2-z4-rSa" secondAttribute="bottom" id="TRL-lf-zck"/>
+                            <constraint firstItem="ym2-z4-rSa" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="TRL-lf-zck"/>
                             <constraint firstItem="ym2-z4-rSa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="b9g-Bw-2L0"/>
                             <constraint firstItem="ym2-z4-rSa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xgd-r2-Z7e"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="recipeTableView" destination="ym2-z4-rSa" id="9Af-eK-aS7"/>
                     </connections>

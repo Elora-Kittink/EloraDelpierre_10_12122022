@@ -22,6 +22,7 @@ class RecipesListInteractor: Interactor
             } catch {
 //                log() from utilsKit
                 log(.data, "RecipesListInteractor", error: error)
+                self.presenter.display(recipeResponse: [])
             }
         }
     }

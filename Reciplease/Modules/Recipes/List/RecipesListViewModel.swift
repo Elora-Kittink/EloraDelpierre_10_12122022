@@ -3,7 +3,13 @@
 //  Created by Elora on 15/12/2022.
 //
 
+import UIKit
+
 class RecipesListViewModel: ViewModel {
     
-    var recipes: [RecipeStruct.RecipeResponse] = []
+    
+    // MARK: - là c'est encore un peu flou le ping pong de 
+    var recipes: [RecipeCellStruct] = []
 }
+
+

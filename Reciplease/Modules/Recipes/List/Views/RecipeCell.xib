@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,16 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecipeCell" customModule="Reciplease" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="299"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="290"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tP6-aO-tCb" userLabel="recipeImage">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="299"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tP6-aO-tCb" userLabel="recipeImage">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="290"/>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59S-EE-wWl">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59S-EE-wWl">
                     <rect key="frame" x="266" y="0.0" width="124" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="LZJ-Fd-PlN" userLabel="likeStackView">
                             <rect key="frame" x="23.999999999999993" y="27" width="80.333333333333329" height="20.333333333333332"/>
@@ -36,6 +33,7 @@
                                     <rect key="frame" x="60.333333333333314" y="0.66666666666666607" width="20" height="19"/>
                                 </imageView>
                             </subviews>
+                            <color key="backgroundColor" systemColor="systemCyanColor"/>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="3ej-xT-B1v" userLabel="timeStackView">
                             <rect key="frame" x="24" y="67" width="80" height="20.333333333333332"/>
@@ -50,6 +48,7 @@
                                     <rect key="frame" x="60.333333333333307" y="0.99999999999999822" width="19.666666666666664" height="19"/>
                                 </imageView>
                             </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,12 +62,15 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3U-IN-hgF" userLabel="recipeLabel">
                                     <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <color key="tintColor" systemColor="systemBlueColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrw-fr-m4K" userLabel="ingredientsLabel">
                                     <rect key="frame" x="0.0" y="38.333333333333343" width="41.333333333333336" height="20.333333333333329"/>
+                                    <color key="backgroundColor" systemColor="systemBrownColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -79,8 +81,16 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="59S-EE-wWl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2nw-Df-xTk"/>
+                <constraint firstItem="59S-EE-wWl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5zM-3X-XOB"/>
+                <constraint firstItem="tP6-aO-tCb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8JR-eN-pbW"/>
+                <constraint firstItem="tP6-aO-tCb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="In9-E7-z23"/>
+                <constraint firstAttribute="trailing" secondItem="59S-EE-wWl" secondAttribute="trailing" id="Tg6-em-z0s"/>
+                <constraint firstAttribute="bottom" secondItem="tP6-aO-tCb" secondAttribute="bottom" id="b21-dF-Lhw"/>
+                <constraint firstAttribute="trailing" secondItem="tP6-aO-tCb" secondAttribute="trailing" id="cz2-iE-uzh"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -91,14 +101,30 @@
                 <outlet property="recipeLabel" destination="U3U-IN-hgF" id="F8w-4e-nQe"/>
                 <outlet property="timeLabel" destination="rds-W7-Iw5" id="sRq-ax-zfs"/>
             </connections>
-            <point key="canvasLocation" x="4.615384615384615" y="-173.10426540284359"/>
+            <point key="canvasLocation" x="4.615384615384615" y="-169.90521327014218"/>
         </view>
     </objects>
     <resources>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
+        <image name="recipe_placeholder" width="300" height="300"/>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

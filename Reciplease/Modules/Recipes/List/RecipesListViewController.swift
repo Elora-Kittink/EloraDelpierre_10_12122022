@@ -49,7 +49,7 @@ extension RecipesListViewController: StoryboardProtocol {
 extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
+        300
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,11 +57,27 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell {
-            cell.recipeLabel.text = self.viewModel.recipes[indexPath.row].label
-            return cell
-        }
-
-        return UITableViewCell()
+//        if let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell {
+//            cell.recipeLabel.text = self.viewModel.recipes[indexPath.row].label
+//            var ingredientsArray: [String] = []
+//            self.viewModel.recipes[indexPath.row].ingredients.forEach { ingredient in
+//                guard let ingredient = ingredient.food else {
+//                    return
+//                }
+//                ingredientsArray.append(ingredient)
+//            }
+//            cell.ingredientsLabel.text = ingredientsArray.joined(separator: ", ")
+//            return cell
+//        }
+//
+//        return UITableViewCell()
+        
+        guard let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell
+        else { return UITableViewCell() }
+//      donne la bonne recette pour remplir les outlets 
+//      le "=" notifie et active le didSet de outletFilling dans RecipeCell
+        cell.outletFilling  = self.viewModel.recipes[indexPath.row]
+        
+        return cell
     }
 }
