@@ -6,4 +6,5 @@ platform :ios, '13.0'
 target 'Reciplease' do
     pod 'NetworkUtilsKit'
     pod 'UtilsKit'
+    pod 'SDWebImage'
 end

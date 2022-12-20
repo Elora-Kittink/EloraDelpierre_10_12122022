@@ -3,23 +3,29 @@ PODS:
     - NetworkUtilsKit/Core (= 2.2)
   - NetworkUtilsKit/Core (2.2):
     - UtilsKit (~> 2.4)
+  - SDWebImage (5.14.2):
+    - SDWebImage/Core (= 5.14.2)
+  - SDWebImage/Core (5.14.2)
   - UtilsKit (2.7):
     - UtilsKit/Core (= 2.7)
   - UtilsKit/Core (2.7)
 
 DEPENDENCIES:
   - NetworkUtilsKit
+  - SDWebImage
   - UtilsKit
 
 SPEC REPOS:
   trunk:
     - NetworkUtilsKit
+    - SDWebImage
     - UtilsKit
 
 SPEC CHECKSUMS:
   NetworkUtilsKit: 683414341c4092ea137caae0952a60a4622439f6
+  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
   UtilsKit: ec424991b3dd84a916a9eff75598fa00d041fb92
 
-PODFILE CHECKSUM: 034e5f9fe68796e164614ba40dae30724af193c3
+PODFILE CHECKSUM: af7459c67081c3ccb54048a377a798848488ba82
 
 COCOAPODS: 1.11.3
