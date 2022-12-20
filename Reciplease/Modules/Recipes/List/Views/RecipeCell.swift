@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import UtilsKit
+import SDWebImage
 
 class RecipeCell: UITableViewCell, NibProtocol {
     
@@ -20,7 +21,7 @@ class RecipeCell: UITableViewCell, NibProtocol {
 //    
     var outletFilling: RecipeCellStruct! {
         didSet {
-            self.recipeImage.image = self.outletFilling.image
+            self.recipeImage.sd_setImage(with: self.outletFilling.image, placeholderImage: UIImage(named: "recipe_placeholder"))
             self.likeLabel.text = self.outletFilling.nbLikes
             self.timeLabel.text = self.outletFilling.time
             self.recipeLabel.text = self.outletFilling.title

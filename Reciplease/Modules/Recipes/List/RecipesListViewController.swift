@@ -49,7 +49,7 @@ extension RecipesListViewController: StoryboardProtocol {
 extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        min(tableView.frame.height / 4.5, 200)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

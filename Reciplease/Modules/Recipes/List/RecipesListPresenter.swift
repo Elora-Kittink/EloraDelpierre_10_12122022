@@ -20,7 +20,7 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
                     }
                     .joined(separator: ", ")
 //     initialisation de la structure RecipeCellViewModel avec les données du tableau "ingredients" créé par le compactmap
-                return RecipeCellStruct(image: UIImage(named: "recipe_placeholder"), //recipe.image,
+                return RecipeCellStruct(image: URL(recipe.image), 
                                     title: recipe.label,
                                     ingredients: ingredients,
                                     nbLikes: "0",

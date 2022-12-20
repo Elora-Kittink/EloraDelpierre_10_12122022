@@ -12,7 +12,7 @@ import UIKit
 //
 struct RecipeCellStruct {
     
-    let image: UIImage?
+    let image: URL?
     let title: String
     let ingredients: String
     let nbLikes: String
