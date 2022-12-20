@@ -14,6 +14,8 @@ struct RecipeStruct: Decodable {
         let label: String
         let image: String
         let ingredients: [IngredientList]
+        let totalTime: Double
+        let yield: Float
     }
     
     struct IngredientList: Decodable {
@@ -23,6 +25,7 @@ struct RecipeStruct: Decodable {
         let food: String?
 //        let foodId: String
 //        let image: String
+
     }
     
     struct HitResponse: Decodable {
