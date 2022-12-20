@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import UtilsKit
 
 class RecipesListPresenter: Presenter<RecipesListViewModel> {
     
@@ -11,7 +12,6 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
     func display(recipeResponse: [RecipeStruct.RecipeResponse]) {
 //        TODO: - réécrire un peu plus lisible
         self.viewModel?.recipes = recipeResponse
-            .prefix(1)
             .map { recipe -> RecipeCellStruct in
                 let ingredients = recipe
                     .ingredients
@@ -26,6 +26,8 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
                                     nbLikes: "0",
                                     time: "0h")
             }
+        
+        debug(self.viewModel?.recipes.count)
         self.viewModel?.send()
     }
 }

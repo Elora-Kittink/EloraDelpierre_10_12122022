@@ -17,23 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ym2-z4-rSa">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XTy-dp-SS6">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.71341250099999998" green="0.40962786750000002" blue="0.39762009199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ym2-z4-rSa" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="8Sz-hp-moc"/>
-                            <constraint firstItem="ym2-z4-rSa" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="TRL-lf-zck"/>
-                            <constraint firstItem="ym2-z4-rSa" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="b9g-Bw-2L0"/>
-                            <constraint firstItem="ym2-z4-rSa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xgd-r2-Z7e"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="XTy-dp-SS6" secondAttribute="bottom" id="SGI-bp-cSo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XTy-dp-SS6" secondAttribute="trailing" id="Yg2-ib-TnW"/>
+                            <constraint firstItem="XTy-dp-SS6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hj2-Sj-xrj"/>
+                            <constraint firstItem="XTy-dp-SS6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rmx-sm-dpZ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
-                        <outlet property="recipeTableView" destination="ym2-z4-rSa" id="9Af-eK-aS7"/>
+                        <outlet property="recipeTableView" destination="XTy-dp-SS6" id="PX8-lH-ozJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

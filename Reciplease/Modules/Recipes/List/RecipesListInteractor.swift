@@ -24,6 +24,9 @@ class RecipesListInteractor: Interactor
                 log(.data, "RecipesListInteractor", error: error)
                 self.presenter.display(recipeResponse: [])
             }
+            
+            
+                self.presenter.display(loader: false)
         }
     }
 }

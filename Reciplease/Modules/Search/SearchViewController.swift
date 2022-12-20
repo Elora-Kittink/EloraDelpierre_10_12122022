@@ -28,6 +28,7 @@ class SearchViewController: BaseViewController
         searchTable.dataSource = self
         searchTable.delegate = self
         self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
+        self.searchTable.hideKeyboardOnTap()
 	}
 	
 	// MARK: - Refresh
