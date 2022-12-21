@@ -7,4 +7,5 @@ target 'Reciplease' do
     pod 'NetworkUtilsKit'
     pod 'UtilsKit'
     pod 'SDWebImage'
+    pod 'CoreDataUtilsKit', '~> 1.1'
 end

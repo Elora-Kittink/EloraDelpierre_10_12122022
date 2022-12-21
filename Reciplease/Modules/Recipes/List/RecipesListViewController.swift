@@ -57,20 +57,7 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell {
-//            cell.recipeLabel.text = self.viewModel.recipes[indexPath.row].label
-//            var ingredientsArray: [String] = []
-//            self.viewModel.recipes[indexPath.row].ingredients.forEach { ingredient in
-//                guard let ingredient = ingredient.food else {
-//                    return
-//                }
-//                ingredientsArray.append(ingredient)
-//            }
-//            cell.ingredientsLabel.text = ingredientsArray.joined(separator: ", ")
-//            return cell
-//        }
-//
-//        return UITableViewCell()
+
         
         guard let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell
         else { return UITableViewCell() }
@@ -79,5 +66,10 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
         cell.outletFilling  = self.viewModel.recipes[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        communication avec Details?
+        
     }
 }
