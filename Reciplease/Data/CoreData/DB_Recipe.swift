@@ -15,23 +15,20 @@ extension DB_Recipe: CoreDataModel {
 
 extension DB_Recipe {
 
-    static func update(recipeResponse: [RecipeResponse.HitResponse]) {
-
-        recipeResponse.compactMap { recipe in
-            let recipe = DB_Recipe.findOrCreate(with: recipe._links.`self`.href)
-
+    static func updateForEach(recipeResponse: [Recipe]) {
+// on créé la recipe dans la BD (recipeSavedInDB) à partir des data que nous a donné le WS (recipeWithDataFromWS)
+        recipeResponse.forEach { recipeWithDataFromWS in
+            let recipeSavedInDB = DB_Recipe.findOrCreate(with: recipeWithDataFromWS.id)
+            recipeSavedInDB?.updateOne(recipe: recipeWithDataFromWS)
         }
     }
 
-    func update2(recipe: RecipeResponse) {
-//        self.a_title = recipe.
-//        self.a_id =
-//        self.a_image =
-//        self.a_redirection =
-//        self.a_instructions =
+    func updateOne(recipe: Recipe) {
+        self.a_title = recipe.title
+        self.a_id = recipe.id
+        self.a_image = recipe.image?.absoluteString
+        self.a_redirection = recipe.redirection?.absoluteString
+        self.a_instructions = recipe.instructions.joined(separator: "|")
+        self.a_isFavorite = recipe.isFavorite
     }
 }
-// pour trouver l'id creer URL avec le href dans links, et utiliser les passcomponent pour prendre le dernier param
-//let url = URL("https://api.edamam.com/api/recipes/v2/5fca095dad0f25124c4fbc5d800e011b?type=public&app_id=88a2d686&app_key=64e25369e87fd7c9e9f9e664b7d4c207")
-//debug(url?.lastPathComponent)
-

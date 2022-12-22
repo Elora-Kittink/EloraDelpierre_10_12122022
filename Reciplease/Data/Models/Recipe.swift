@@ -7,6 +7,8 @@
 
 import Foundation
 
+// structure universelle qui peut être obtenue soit depuis la structure réponse de l'api, soit par la structure de la base de donnée
+
 struct Recipe {
     
     private(set) var image: URL?
@@ -18,6 +20,7 @@ struct Recipe {
     private(set) var isFavorite: Bool
     private(set) var instructions: [String]
     
+// si on traduit depuis l'api
     init(from response: RecipeResponse.HitResponse) {
         self.image = URL(response.recipe.image)
         self.title = response.recipe.label
@@ -31,6 +34,7 @@ struct Recipe {
         self.instructions = response.recipe.ingredientLines
     }
     
+//    si on traduit depuis la base de donnée 
     init(from coreDataObject: DB_Recipe) {
         self.image = URL(coreDataObject.a_image)
         self.title = coreDataObject.a_title

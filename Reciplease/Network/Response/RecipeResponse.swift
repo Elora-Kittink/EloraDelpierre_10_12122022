@@ -7,6 +7,9 @@
 
 import Foundation
 
+
+// structure imposée par la réponse API
+
 struct RecipeResponse: Decodable {
     
     struct Recipe: Decodable {

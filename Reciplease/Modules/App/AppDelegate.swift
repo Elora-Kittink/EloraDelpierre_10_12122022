@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+                let documentsDirectory = paths.first
+            log(.data, "Documents directory: \(documentsDirectory?.absoluteString ?? ":danger: No documents directory file !")")
         do {
            try CoreDataManager.default.setCoreDataStack("Reciplease")
             log(.data, "core data succes")
