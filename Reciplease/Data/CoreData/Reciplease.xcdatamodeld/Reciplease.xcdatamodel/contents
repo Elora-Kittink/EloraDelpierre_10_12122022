@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DB_Ingredient" representedClassName=".DB_Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="a_id" optional="YES" attributeType="String"/>
+        <attribute name="a_name" optional="YES" attributeType="String"/>
+        <relationship name="r_recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DB_Recipe" inverseName="r_ingredient" inverseEntity="DB_Recipe"/>
+    </entity>
+    <entity name="DB_Recipe" representedClassName=".DB_Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="a_id" optional="YES" attributeType="String"/>
+        <attribute name="a_image" optional="YES" attributeType="String"/>
+        <attribute name="a_instructions" optional="YES" attributeType="String"/>
+        <attribute name="a_isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="a_redirection" optional="YES" attributeType="String"/>
+        <attribute name="a_time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="a_title" optional="YES" attributeType="String"/>
+        <relationship name="r_ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DB_Ingredient" inverseName="r_recipe" inverseEntity="DB_Ingredient"/>
+    </entity>
+</model>

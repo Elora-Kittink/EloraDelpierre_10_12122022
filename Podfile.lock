@@ -1,7 +1,7 @@
 PODS:
-  - CoreDataUtilsKit (1.1):
-    - CoreDataUtilsKit/Core (= 1.1)
-  - CoreDataUtilsKit/Core (1.1):
+  - CoreDataUtilsKit (1.1.1):
+    - CoreDataUtilsKit/Core (= 1.1.1)
+  - CoreDataUtilsKit/Core (1.1.1):
     - UtilsKit (~> 2.0)
   - NetworkUtilsKit (2.2):
     - NetworkUtilsKit/Core (= 2.2)
@@ -28,7 +28,7 @@ SPEC REPOS:
     - UtilsKit
 
 SPEC CHECKSUMS:
-  CoreDataUtilsKit: afa365a02384ce5f9c88e06225358be95cd9dc57
+  CoreDataUtilsKit: f934f23cb24a772bf8f7afc8c19722f3f6caf1d5
   NetworkUtilsKit: 683414341c4092ea137caae0952a60a4622439f6
   SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
   UtilsKit: ec424991b3dd84a916a9eff75598fa00d041fb92

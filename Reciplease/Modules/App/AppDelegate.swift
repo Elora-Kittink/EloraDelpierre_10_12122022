@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreDataUtilsKit
+import UtilsKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        true
+        
+        do {
+           try CoreDataManager.default.setCoreDataStack("Reciplease")
+            log(.data, "core data succes")
+        } catch {
+            log(.data, "fail core data init", error: error)
+        }
+        return true
     }
 
     // MARK: UISceneSession Lifecycle
@@ -24,4 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
+    
+    
 }
