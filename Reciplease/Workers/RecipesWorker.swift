@@ -9,11 +9,11 @@ import Foundation
 
 struct RecipesWorker {
     
-    func fetchRecipes(ingredients: [String]) async throws -> [RecipeStruct.RecipeResponse] {
-        let allData = try await APIRequest(ingredients: ingredients).response(RecipeStruct.self)
+    func fetchRecipes(ingredients: [String]) async throws -> [Recipe] {
+        let allData = try await APIRequest(ingredients: ingredients).response(RecipeResponse.self)
         
-        let allRecipes = allData.hits.map { hit -> RecipeStruct.RecipeResponse in
-            hit.recipe
+        let allRecipes = allData.hits.map { hit -> Recipe in
+            Recipe(from: hit)
         }
         
         return allRecipes

@@ -12,7 +12,7 @@
         <attribute name="a_isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="a_redirection" optional="YES" attributeType="String"/>
         <attribute name="a_time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="a_title" optional="YES" attributeType="String"/>
+        <attribute name="a_title" attributeType="String"/>
         <relationship name="r_ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DB_Ingredient" inverseName="r_recipe" inverseEntity="DB_Ingredient"/>
     </entity>
 </model>

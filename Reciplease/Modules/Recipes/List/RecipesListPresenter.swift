@@ -9,7 +9,7 @@ import UtilsKit
 class RecipesListPresenter: Presenter<RecipesListViewModel> {
     
     //    fonction qui prends le tableau de RecipeStruct et le transforme en tableau de RecipeCellViewModel
-    func display(recipeResponse: [RecipeStruct.RecipeResponse]) {
+    func display(recipeResponse: [RecipeResponse.Recipe]) {
 
         let recipesInCellStructForm = recipeResponse
             .map { recipe -> RecipeCellStruct in
@@ -27,12 +27,13 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
                                                  minute: Int(recipe.totalTime),
                                                  second: 0,
                                                  of: Date())
+// TODO: Problème : recipe est une RecipeStruct.RecipeResponse alors que le href dont j'ai besoin pour faire mon URL est dans RecipeStruct.HitResponse. RELOU
                 
                 return RecipeCellStruct(image: URL(recipe.image),
                                         title: recipe.label,
                                         ingredients: ingredients,
                                         nbLikes: "\(recipe.yield)",
-                                        time: date?.toString(format: "HH'h'mm") ?? "-")
+                                        time: date?.toString(format: "HH'h'mm") ?? "-", id: "test")
             }
 //  on pousse au ViewModel le tableau de recette dans la forme affichable
         self.viewModel?.recipes = recipesInCellStructForm

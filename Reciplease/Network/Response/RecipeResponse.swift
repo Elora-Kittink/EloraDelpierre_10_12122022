@@ -7,30 +7,36 @@
 
 import Foundation
 
-struct RecipeStruct: Decodable {
+struct RecipeResponse: Decodable {
     
-    struct RecipeResponse: Decodable {
+    struct Recipe: Decodable {
         
         let label: String
         let image: String
         let ingredients: [IngredientList]
+        let ingredientLines: [String]
         let totalTime: Double
-        let yield: Float
+        let uri: String
     }
     
     struct IngredientList: Decodable {
-//        let text: String
-//        let quantity: Float
-//        let measure: String
-        let food: String?
-//        let foodId: String
-//        let image: String
 
+        let food: String?
+        let foodId: String
     }
     
     struct HitResponse: Decodable {
         
-        let recipe: RecipeResponse
+        let recipe: Recipe
+        let _links: Links
+    }
+    
+    struct Links: Decodable {
+        let `self`: Selfs
+    }
+    
+    struct Selfs: Decodable {
+        let href: String
     }
     
     let hits: [HitResponse]
