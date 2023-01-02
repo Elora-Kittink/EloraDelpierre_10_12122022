@@ -20,6 +20,7 @@ struct RecipesWorker {
         DB_Recipe.updateForEach(recipeResponse: allRecipes)
         try CoreDataManager.default.save()
         
+        print(DB_Ingredient.getAll())
         return allRecipes
     }
 }

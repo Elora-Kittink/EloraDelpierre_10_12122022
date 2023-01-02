@@ -19,6 +19,7 @@ class RecipesListInteractor: Interactor
             do {
                 let data = try await recipeWorker.fetchRecipes(ingredients: ingredients)
                 self.presenter.display(recipeResponse: data)
+                
             } catch {
 //                ** log() from utilsKit
                 log(.data, "RecipesListInteractor", error: error)

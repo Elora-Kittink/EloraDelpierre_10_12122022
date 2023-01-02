@@ -15,20 +15,28 @@ extension DB_Recipe: CoreDataModel {
 
 extension DB_Recipe {
 
-    static func updateForEach(recipeResponse: [Recipe]) {
+    static func updateForEach(recipeResponse: [Recipe]) -> [DB_Recipe] {
+        var recipesArray: [DB_Recipe] = []
 // on créé la recipe dans la BD (recipeSavedInDB) à partir des data que nous a donné le WS (recipeWithDataFromWS)
         recipeResponse.forEach { recipeWithDataFromWS in
-            let recipeSavedInDB = DB_Recipe.findOrCreate(with: recipeWithDataFromWS.id)
-            recipeSavedInDB?.updateOne(recipe: recipeWithDataFromWS)
+            guard let recipeSavedInDB = DB_Recipe.findOrCreate(with: recipeWithDataFromWS.id) else {
+                return
+            }
+            recipeSavedInDB.updateOne(recipe: recipeWithDataFromWS)
+            recipesArray.append(recipeSavedInDB)
         }
+        return recipesArray
     }
 
-    func updateOne(recipe: Recipe) {
+    func updateOne(recipe: Recipe)  {
         self.a_title = recipe.title
         self.a_id = recipe.id
         self.a_image = recipe.image?.absoluteString
         self.a_redirection = recipe.redirection?.absoluteString
         self.a_instructions = recipe.instructions.joined(separator: "|")
         self.a_isFavorite = recipe.isFavorite
+//        TODO: ajouter la relation avec ingrédient
+        self.r_ingredient = NSSet(array: DB_Ingredient.updateForEach(recipeResponse: recipe))
+        
     }
 }
