@@ -13,10 +13,10 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
 
         let recipesInCellStructForm = recipeResponse
             .map { recipe -> RecipeCellStruct in
-                let ingredients = recipe
-                    .ingredients
-                    .joined(separator: ", ")
-                
+                let ingredientsArray = recipe.ingredients.map {
+                    $0.name
+                }
+                let ingredients = ingredientsArray.joined(separator: ", ")
 //     initialisation de la structure RecipeCellViewModel avec les données du tableau "ingredients" créé par le compactmap
 
                 let date = Calendar.current.date(bySettingHour: 0,

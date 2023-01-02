@@ -13,7 +13,7 @@ struct Recipe {
     
     private(set) var image: URL?
     private(set) var title: String?
-    private(set) var ingredients: [String]
+    private(set) var ingredients: [(name: String, id: String)]
     private(set) var time: Double
     private(set) var id: String?
     private(set) var redirection: URL?
@@ -24,8 +24,9 @@ struct Recipe {
     init(from response: RecipeResponse.HitResponse) {
         self.image = URL(response.recipe.image)
         self.title = response.recipe.label
-        self.ingredients = response.recipe.ingredients.compactMap { ingredient -> String? in
-            ingredient.food
+//        est ce que ici il faut pas que je fasse un tableau de tupples pour avoir le nom de l'ingrédient ET son id
+        self.ingredients = response.recipe.ingredients.compactMap { ingredient -> (name: String, id: String) in
+            (name: ingredient.food, id: ingredient.foodId)
         }
         self.time = response.recipe.totalTime
         self.id = URL(response._links.`self`.href)?.lastPathComponent

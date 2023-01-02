@@ -24,7 +24,7 @@ struct RecipeResponse: Decodable {
     
     struct IngredientList: Decodable {
 
-        let food: String?
+        let food: String
         let foodId: String
     }
     
