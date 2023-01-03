@@ -4,6 +4,7 @@
 //
 
 import UtilsKit
+import UIKit
 
 class RecipesListViewController: BaseViewController
 <
@@ -63,13 +64,14 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
         else { return UITableViewCell() }
 //      donne la bonne recette pour remplir les outlets 
 //      le "=" notifie et active le didSet de outletFilling dans RecipeCell
-        cell.outletFilling  = self.viewModel.recipes[indexPath.row]
+        cell.outletFilling = self.viewModel.recipes[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        communication avec Details?
-        
+        let vc = DetailsViewController.fromStoryboard()
+        vc.recipe = self.viewModel.recipesFullInfo[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -6,10 +6,6 @@
 import UIKit
 
 class RecipesListViewModel: ViewModel {
-    
-    
-    // MARK: - là c'est encore un peu flou le ping pong de 
+    var recipesFullInfo: [Recipe] = []
     var recipes: [RecipeCellStruct] = []
 }
-
-

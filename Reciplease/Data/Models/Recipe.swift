@@ -7,7 +7,9 @@
 
 import Foundation
 
-// structure universelle qui peut être obtenue soit depuis la structure réponse de l'api, soit par la structure de la base de donnée
+// structure universelle qui peut être obtenue
+//soit depuis la structure réponse de l'api,
+//soit par la structure de la base de donnée
 
 struct Recipe {
     
@@ -39,8 +41,11 @@ struct Recipe {
     init(from coreDataObject: DB_Recipe) {
         self.image = URL(coreDataObject.a_image)
         self.title = coreDataObject.a_title
-//         TODO: voir les relations à ingredients
-        self.ingredients = []
+//       on fait un compactmap pour extraire name et id du NSObject
+        self.ingredients = (coreDataObject.r_ingredient?.allObjects as? [DB_Ingredient])?.compactMap {
+            guard let name = $0.a_name, let id = $0.a_id else { return nil }
+            return (name, id)
+        } ?? []
         self.time = coreDataObject.a_time
         self.id = coreDataObject.a_id
         self.redirection = URL(coreDataObject.a_redirection)

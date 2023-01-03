@@ -28,15 +28,14 @@ extension DB_Recipe {
         return recipesArray
     }
 
-    func updateOne(recipe: Recipe)  {
+    func updateOne(recipe: Recipe) {
         self.a_title = recipe.title
         self.a_id = recipe.id
         self.a_image = recipe.image?.absoluteString
         self.a_redirection = recipe.redirection?.absoluteString
         self.a_instructions = recipe.instructions.joined(separator: "|")
         self.a_isFavorite = recipe.isFavorite
-//        TODO: ajouter la relation avec ingrédient
+//      l'attribution de r_ingredient fonctionne aussi dans l'autre sens, l'attribution des recettes à chaque ingrédient
         self.r_ingredient = NSSet(array: DB_Ingredient.updateForEach(recipeResponse: recipe))
-        
     }
 }

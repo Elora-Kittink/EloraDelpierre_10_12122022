@@ -31,8 +31,6 @@ extension DB_Ingredient {
     func updateOne(ingredient: (name: String, id: String), for recipe: Recipe) {
         self.a_id = ingredient.id
         self.a_name = ingredient.name
-//        TODO: ajouter la relation avec Recipe
-//        self.r_recipe = NSSet(array: DB_Recipe.updateForEach(recipeResponse: []))
-       
+//      l'attribution des recettes se fait automatiquement via la fonction updateOne de DB_Recipe
     }
 }

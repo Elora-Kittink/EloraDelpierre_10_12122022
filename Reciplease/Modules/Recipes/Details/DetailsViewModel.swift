@@ -3,4 +3,7 @@
 //  Created by Elora on 20/12/2022.
 //
 
-class DetailsViewModel: ViewModel { }
+class DetailsViewModel: ViewModel {
+    
+    var recipe: Recipe!
+}

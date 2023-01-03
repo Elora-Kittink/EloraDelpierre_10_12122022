@@ -11,15 +11,14 @@ class RecipesListInteractor: Interactor
     RecipesListPresenter
 > {
     private let recipeWorker = RecipesWorker()
-    
+//    TODO: commente ça putain !
     func refresh(ingredients: [String]) {
         self.presenter.display(loader: true)
         
         Task {
             do {
                 let data = try await recipeWorker.fetchRecipes(ingredients: ingredients)
-                self.presenter.display(recipeResponse: data)
-                
+                self.presenter.display(recipeResponse: data)                
             } catch {
 //                ** log() from utilsKit
                 log(.data, "RecipesListInteractor", error: error)
