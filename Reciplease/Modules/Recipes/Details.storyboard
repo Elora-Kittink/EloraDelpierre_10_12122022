@@ -73,11 +73,24 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OUa-84-ewm">
                                                 <rect key="frame" x="0.0" y="300" width="390" height="428.66666666666674"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionCell" id="bhv-4w-z8F">
+                                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bhv-4w-z8F" id="kcL-fa-0RY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
                                             </tableView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWL-af-3u7">
                                                 <rect key="frame" x="157.66666666666666" y="728.66666666666663" width="75" height="34.333333333333371"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="redirection" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HIt-vF-yDP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,7 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="recipeImage" destination="Vqo-Md-xIY" id="g2I-6t-ugI"/>
-                        <outlet property="recipeInstructionsTableView" destination="OUa-84-ewm" id="YKh-Qh-Mts"/>
+                        <outlet property="recipeInstructionsTableView" destination="OUa-84-ewm" id="X4x-Bq-CIh"/>
                         <outlet property="recipeLabel" destination="qP4-po-jic" id="Kqd-L2-1mx"/>
                         <outlet property="recipeRedirection" destination="nWL-af-3u7" id="6LW-Ln-deS"/>
                         <outlet property="recipeTime" destination="omZ-Q0-4tg" id="0wl-cB-jyZ"/>

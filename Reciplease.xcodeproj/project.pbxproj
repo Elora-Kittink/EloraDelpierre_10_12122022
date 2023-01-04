@@ -175,6 +175,13 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		D596479D2965C3CC009814DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D59ABC7729534AB900510FFF /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,9 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				D59AC567294B5BED00B06B23 /* Views */,
-				D59AC55C294B541D00B06B23 /* RecipesListPresenter.swift */,
 				D59AC55D294B541D00B06B23 /* RecipesListViewController.swift */,
 				D59AC55E294B541D00B06B23 /* RecipesListInteractor.swift */,
+				D59AC55C294B541D00B06B23 /* RecipesListPresenter.swift */,
 				D59AC55F294B541D00B06B23 /* RecipesListViewModel.swift */,
 			);
 			path = List;
@@ -354,9 +361,10 @@
 		D5F99C15295200650096FD86 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				D5F99C16295200A50096FD86 /* DetailsPresenter.swift */,
+				D596479D2965C3CC009814DB /* Views */,
 				D5F99C17295200A50096FD86 /* DetailsViewController.swift */,
 				D5F99C18295200A50096FD86 /* DetailsInteractor.swift */,
+				D5F99C16295200A50096FD86 /* DetailsPresenter.swift */,
 				D5F99C19295200A50096FD86 /* DetailsViewModel.swift */,
 			);
 			path = Details;

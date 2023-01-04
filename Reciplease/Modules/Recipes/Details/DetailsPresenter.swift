@@ -8,11 +8,6 @@ import SDWebImage
 
 class DetailsPresenter: Presenter<DetailsViewModel> {
     
-    //    TODO: est ce qu'on a besoin de Clear()?
-    //    func clear() {
-    //        self.viewModel?.recipe = Recipe
-    //    }
-    
 //    Remplissage des données du ViewModel
     func display(recipe: Recipe) {
         
