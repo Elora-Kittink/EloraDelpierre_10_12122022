@@ -40,11 +40,6 @@
 		D5DBF3CF2947786D00EEECAE /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3CB2947786D00EEECAE /* SearchInteractor.swift */; };
 		D5DBF3D02947786D00EEECAE /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3CC2947786D00EEECAE /* SearchViewModel.swift */; };
 		D5DBF3D4294788B400EEECAE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5DBF3D3294788B400EEECAE /* Colors.xcassets */; };
-		D5DBF3DB2947898C00EEECAE /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3D72947898C00EEECAE /* FavoritesPresenter.swift */; };
-		D5DBF3DC2947898C00EEECAE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */; };
-		D5DBF3DD2947898C00EEECAE /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */; };
-		D5DBF3DE2947898C00EEECAE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */; };
-		D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DBF3E029478C7100EEECAE /* Favorites.storyboard */; };
 		D5DBF3E329478CD900EEECAE /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5DBF3E229478CD900EEECAE /* Search.storyboard */; };
 		D5F99C1A295200A50096FD86 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F99C16295200A50096FD86 /* DetailsPresenter.swift */; };
 		D5F99C1B295200A50096FD86 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F99C17295200A50096FD86 /* DetailsViewController.swift */; };
@@ -91,11 +86,6 @@
 		D5DBF3CB2947786D00EEECAE /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		D5DBF3CC2947786D00EEECAE /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D5DBF3D3294788B400EEECAE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		D5DBF3D72947898C00EEECAE /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
-		D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
-		D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		D5DBF3E029478C7100EEECAE /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		D5DBF3E229478CD900EEECAE /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D5F99C16295200A50096FD86 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
 		D5F99C17295200A50096FD86 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -299,7 +289,6 @@
 				D59AC55A294B53E200B06B23 /* Recipes */,
 				D569C59A2949D51E00F86EBF /* TabBar */,
 				D5DBF3D5294788CD00EEECAE /* App */,
-				D5DBF3D62947897500EEECAE /* Favorites */,
 				D5DBF3C82947781100EEECAE /* Search */,
 			);
 			path = Modules;
@@ -344,18 +333,6 @@
 				D59F3F3F29472B440003818F /* LaunchScreen.storyboard */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		D5DBF3D62947897500EEECAE /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				D5DBF3D72947898C00EEECAE /* FavoritesPresenter.swift */,
-				D5DBF3D82947898C00EEECAE /* FavoritesViewController.swift */,
-				D5DBF3D92947898C00EEECAE /* FavoritesInteractor.swift */,
-				D5DBF3DA2947898C00EEECAE /* FavoritesViewModel.swift */,
-				D5DBF3E029478C7100EEECAE /* Favorites.storyboard */,
-			);
-			path = Favorites;
 			sourceTree = "<group>";
 		};
 		D5F99C15295200650096FD86 /* Details */ = {
@@ -434,7 +411,6 @@
 				D59F3F4129472B440003818F /* LaunchScreen.storyboard in Resources */,
 				D59AC569294B5C0F00B06B23 /* RecipeCell.xib in Resources */,
 				D5DBF3D4294788B400EEECAE /* Colors.xcassets in Resources */,
-				D5DBF3E129478C7100EEECAE /* Favorites.storyboard in Resources */,
 				D59F3F3E29472B440003818F /* Images.xcassets in Resources */,
 				D5F99C1F295205FB0096FD86 /* Details.storyboard in Resources */,
 				D59AC566294B547500B06B23 /* Recipes.storyboard in Resources */,
@@ -512,12 +488,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59AC562294B541D00B06B23 /* RecipesListInteractor.swift in Sources */,
-				D5DBF3DE2947898C00EEECAE /* FavoritesViewModel.swift in Sources */,
 				D5F99C1B295200A50096FD86 /* DetailsViewController.swift in Sources */,
-				D5DBF3DC2947898C00EEECAE /* FavoritesViewController.swift in Sources */,
 				D59AC56B294B5C2100B06B23 /* RecipeCell.swift in Sources */,
 				D5DBF3C2294777BE00EEECAE /* BaseViewController.swift in Sources */,
-				D5DBF3DD2947898C00EEECAE /* FavoritesInteractor.swift in Sources */,
 				D5F99C1D295200A50096FD86 /* DetailsViewModel.swift in Sources */,
 				D5DBF3CE2947786D00EEECAE /* SearchViewController.swift in Sources */,
 				D59AC559294B1CDB00B06B23 /* RecipeResponse.swift in Sources */,
@@ -525,7 +498,6 @@
 				D5F99C1A295200A50096FD86 /* DetailsPresenter.swift in Sources */,
 				D59ABC7B29534CD400510FFF /* Reciplease.xcdatamodeld in Sources */,
 				D59ABC7D2953509800510FFF /* DB_Recipe.swift in Sources */,
-				D5DBF3DB2947898C00EEECAE /* FavoritesPresenter.swift in Sources */,
 				D5DBF3CD2947786D00EEECAE /* SearchPresenter.swift in Sources */,
 				D5DBF3C5294777BE00EEECAE /* Presenter.swift in Sources */,
 				D569C59F294A0DAA00F86EBF /* SearchSectionHeader.swift in Sources */,

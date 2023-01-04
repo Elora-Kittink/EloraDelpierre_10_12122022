@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="-1265" y="1016"/>
         </scene>
-        <!--FavoritesViewController-->
+        <!--RecipesListViewController-->
         <scene sceneID="N81-ky-6zt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Favorites" referencedIdentifier="FavoritesViewController" id="UjI-1K-3Vg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Recipes" referencedIdentifier="RecipesListViewController" id="UjI-1K-3Vg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ui2-hc-P55"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6k-g5-B8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
