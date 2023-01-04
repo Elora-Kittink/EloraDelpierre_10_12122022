@@ -18,6 +18,7 @@ class RecipeCell: UITableViewCell, NibProtocol {
     @IBOutlet private weak var recipeLabel: UILabel!
     @IBOutlet private weak var ingredientsLabel: UILabel!
     
+//    TODO: commente ça bordel !!
     var outletFilling: RecipeCellStruct! {
         didSet {
             self.recipeImage.sd_setImage(with: self.outletFilling.image, placeholderImage: UIImage(named: "recipe_placeholder"))

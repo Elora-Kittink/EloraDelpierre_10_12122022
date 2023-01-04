@@ -117,7 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="recipeImage" destination="Vqo-Md-xIY" id="g2I-6t-ugI"/>
-                        <outlet property="recipeInstructions" destination="OUa-84-ewm" id="6at-gt-EdX"/>
+                        <outlet property="recipeInstructionsTableView" destination="OUa-84-ewm" id="YKh-Qh-Mts"/>
                         <outlet property="recipeLabel" destination="qP4-po-jic" id="Kqd-L2-1mx"/>
                         <outlet property="recipeRedirection" destination="nWL-af-3u7" id="6LW-Ln-deS"/>
                         <outlet property="recipeTime" destination="omZ-Q0-4tg" id="0wl-cB-jyZ"/>

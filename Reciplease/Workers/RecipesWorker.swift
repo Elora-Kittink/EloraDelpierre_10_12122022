@@ -23,4 +23,11 @@ struct RecipesWorker {
         print(DB_Ingredient.getAll())
         return allRecipes
     }
+    
+    func fetchRecipeFromId(id: String) -> Recipe? {
+        guard let DBRecipe = DB_Recipe.get(with: id) else {
+            return nil
+        }
+        return Recipe(from: DBRecipe)
+    }
 }

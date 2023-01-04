@@ -70,8 +70,11 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let recipeId = self.viewModel.recipesFullInfo[indexPath.row].id else {
+            return
+        }
         let vc = DetailsViewController.fromStoryboard()
-        vc.recipe = self.viewModel.recipesFullInfo[indexPath.row]
+        vc.recipeId = recipeId
         navigationController?.pushViewController(vc, animated: true)
     }
 }
