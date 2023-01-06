@@ -298,9 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				D569C59D294A0D8400F86EBF /* Views */,
-				D5DBF3C92947786D00EEECAE /* SearchPresenter.swift */,
 				D5DBF3CA2947786D00EEECAE /* SearchViewController.swift */,
 				D5DBF3CB2947786D00EEECAE /* SearchInteractor.swift */,
+				D5DBF3C92947786D00EEECAE /* SearchPresenter.swift */,
 				D5DBF3CC2947786D00EEECAE /* SearchViewModel.swift */,
 				D5DBF3E229478CD900EEECAE /* Search.storyboard */,
 			);

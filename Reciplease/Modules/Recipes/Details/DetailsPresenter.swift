@@ -22,6 +22,11 @@ class DetailsPresenter: Presenter<DetailsViewModel> {
         self.viewModel?.redirection = recipe.redirection
         self.viewModel?.instructions = recipe.instructions
         self.viewModel?.time = date?.toString(format: "HH'h'mm") ?? "-"
+        if recipe.isFavorite {
+            self.viewModel?.favoriteButtonImage = UIImage(systemName: "heart.fill")
+        } else {
+            self.viewModel?.favoriteButtonImage = UIImage(systemName: "heart")
+        }
         self.viewModel?.send()
     }
 }

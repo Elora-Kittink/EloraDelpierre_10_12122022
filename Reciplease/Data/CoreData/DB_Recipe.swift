@@ -34,7 +34,7 @@ extension DB_Recipe {
         self.a_image = recipe.image?.absoluteString
         self.a_redirection = recipe.redirection?.absoluteString
         self.a_instructions = recipe.instructions.joined(separator: "|")
-        self.a_isFavorite = recipe.isFavorite
+//        self.a_isFavorite = recipe.isFavorite
 //      l'attribution de r_ingredient fonctionne aussi dans l'autre sens, l'attribution des recettes à chaque ingrédient
         self.r_ingredient = NSSet(array: DB_Ingredient.updateForEach(recipeResponse: recipe))
     }

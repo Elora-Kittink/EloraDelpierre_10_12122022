@@ -12,12 +12,14 @@ class DetailsInteractor: Interactor
 > {
     let worker = RecipesWorker()
     
-//    TODO: ici on recoit un id et on va chercher la recette corresoindante dans la BDD
-    
-    func add(id: String){
+    func add(id: String) {
         guard let recipe = worker.fetchRecipeFromId(id: id) else {
             return
         }
         self.presenter.display(recipe: recipe)
+    }
+    
+    func addInFavorites(id: String) {
+        self.worker.updateToAddInFavorite(recipeId: id)
     }
 }

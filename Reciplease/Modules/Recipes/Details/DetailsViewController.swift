@@ -12,13 +12,14 @@ class DetailsViewController: BaseViewController
 	DetailsPresenter,
 	DetailsInteractor
 > {
-	
+    
 	// MARK: - Outlets
     @IBOutlet private weak var recipeImage: UIImageView!
     @IBOutlet private weak var recipeLabel: UILabel!
     @IBOutlet private weak var recipeTime: UILabel!
     @IBOutlet private weak var recipeInstructionsTableView: UITableView!
     @IBOutlet private weak var recipeRedirection: UIButton!
+    @IBOutlet private weak var favoriteButton: UIButton!
 	// MARK: - Variables
 	
     var recipeId: String!
@@ -26,12 +27,12 @@ class DetailsViewController: BaseViewController
 	// MARK: - View life cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        self.interactor.add(id: recipeId)
         recipeInstructionsTableView.delegate = self
         recipeInstructionsTableView.dataSource = self
         self.recipeInstructionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructionCell")
         view.backgroundColor = .systemBackground
-        refreshUI()
+        
+        self.interactor.add(id: recipeId)
 	}
     
 	// MARK: - Refresh
@@ -41,15 +42,20 @@ class DetailsViewController: BaseViewController
                                      placeholderImage: UIImage(named: "recipe_placeholder"))
         self.recipeLabel.text = self.viewModel.title
         self.recipeTime.text = self.viewModel.time
+        self.favoriteButton.setImage(self.viewModel.favoriteButtonImage, for: .normal)
         recipeInstructionsTableView.reloadData()
 	}
 
 	// MARK: - Actions
-    @IBAction func redirection() {
+    @IBAction private func redirection() {
         guard let requestURL = self.viewModel.redirection else {
             return
         }
         UIApplication.shared.open(requestURL)
+    }
+    
+    @IBAction private func isFavorite() {
+        self.interactor.addInFavorites(id: recipeId)
     }
 }
 

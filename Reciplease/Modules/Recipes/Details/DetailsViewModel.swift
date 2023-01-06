@@ -7,11 +7,11 @@ import UtilsKit
 
 class DetailsViewModel: ViewModel {
     
-//    TODO: est ce qu'on a besoin de isFavorite et de l'ID?
     var recipe: Recipe!
     var image: URL?
     var title: String!
     var time: String!
     var redirection: URL?
     var instructions: [String]!
+    var favoriteButtonImage: UIImage!
 }

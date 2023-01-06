@@ -18,6 +18,10 @@ class RecipesListViewController: BaseViewController
     
 	// MARK: - Variables
     var ingredientsSearch: [String]?
+//    automatiquement set à true car on ne peut pas le faire depuis la tabBar
+//    il passe a false quand le bouton searchForRecipe est appelé puis repassera à
+//    true quand on revient sur ce viewcontroller
+    var displayFavorites = true
 	
 	// MARK: - View life cycle
 	override func viewDidLoad() {
@@ -25,8 +29,14 @@ class RecipesListViewController: BaseViewController
         self.recipeTableView.delegate = self
         self.recipeTableView.dataSource = self
         self.recipeTableView.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
-        self.interactor.refresh(ingredients: ingredientsSearch ?? [])
-	}
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.interactor.refresh(ingredients: ingredientsSearch,
+                                displayFavorites: displayFavorites)
+    }
 	
 	// MARK: - Refresh
 	override func refreshUI() {
@@ -58,10 +68,8 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        
         guard let cell = recipeTableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell
-        else { return UITableViewCell() }
+            else { return UITableViewCell() }
 //      donne la bonne recette pour remplir les outlets 
 //      le "=" notifie et active le didSet de outletFilling dans RecipeCell
         cell.outletFilling = self.viewModel.recipes[indexPath.row]
