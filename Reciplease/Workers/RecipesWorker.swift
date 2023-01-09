@@ -47,6 +47,8 @@ struct RecipesWorker {
     func updateToAddInFavorite(recipeId: String) {
         guard let recipe = DB_Recipe.get(with: recipeId) else { return }
         recipe.a_isFavorite.toggle()
+//        commenter ce que fait la ligne ci dessous
         try? CoreDataManager.default.save()
+//        ici faire en sorte d'update l'affichage du coeur?
     }
 }

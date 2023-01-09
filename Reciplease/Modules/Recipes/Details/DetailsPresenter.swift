@@ -6,6 +6,8 @@
 import UIKit
 import SDWebImage
 
+
+// TODO: faire correspondre le remplissage des coeurs avec favors ou non 
 class DetailsPresenter: Presenter<DetailsViewModel> {
     
 //    Remplissage des données du ViewModel

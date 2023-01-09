@@ -21,5 +21,10 @@ class DetailsInteractor: Interactor
     
     func addInFavorites(id: String) {
         self.worker.updateToAddInFavorite(recipeId: id)
+//        faire un interactor.display ici pour mettre à jour l'UI après la mise en favoris?
+        guard let recipe = self.worker.fetchRecipeFromId(id: id) else {
+            return
+        }
+        self.presenter.display(recipe: recipe)
     }
 }
