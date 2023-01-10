@@ -39,7 +39,6 @@ struct RecipesWorker {
         let favoriteRecipes = fetchRequest.map { recipe in
             Recipe(from: recipe)
         }
-        print(favoriteRecipes)
         return favoriteRecipes
     }
     
@@ -49,6 +48,5 @@ struct RecipesWorker {
         recipe.a_isFavorite.toggle()
 //        commenter ce que fait la ligne ci dessous
         try? CoreDataManager.default.save()
-//        ici faire en sorte d'update l'affichage du coeur?
     }
 }

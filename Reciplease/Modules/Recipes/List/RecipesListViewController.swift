@@ -22,6 +22,17 @@ class RecipesListViewController: BaseViewController
 //    il passe a false quand le bouton searchForRecipe est appelé puis repassera à
 //    true quand on revient sur ce viewcontroller
     var displayFavorites = true
+    
+    private lazy var emptyLabel: UILabel = {
+        var label = UILabel()
+        
+        if self.displayFavorites {
+            label.text = "Vous n'avez aucune recette en favoris, pour ajouter une recette en favoris cliquez sur le coeur en haut à droite sur la fiche recette"
+        } else {
+            label.text = "Aucune recette trouvée pour cette recherche, essayez autre chose !"
+        }
+        return label
+    }()
 	
 	// MARK: - View life cycle
 	override func viewDidLoad() {
@@ -41,6 +52,8 @@ class RecipesListViewController: BaseViewController
 	// MARK: - Refresh
 	override func refreshUI() {
 		super.refreshUI()
+// TODO: réécrire ou commenter cette ligne incompréhensible 
+        recipeTableView.backgroundView = (self.viewModel.recipes?.isEmpty ?? false) ? self.emptyLabel : nil
         recipeTableView.reloadData()
 	}
 
@@ -64,7 +77,10 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.viewModel.recipes.count
+        guard let recipes = self.viewModel.recipes else {
+            return 0
+        }
+       return recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +88,10 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
             else { return UITableViewCell() }
 //      donne la bonne recette pour remplir les outlets 
 //      le "=" notifie et active le didSet de outletFilling dans RecipeCell
-        cell.outletFilling = self.viewModel.recipes[indexPath.row]
+        guard let recipes = self.viewModel.recipes else {
+            return UITableViewCell()
+        }
+        cell.outletFilling = recipes[indexPath.row]
         
         return cell
     }

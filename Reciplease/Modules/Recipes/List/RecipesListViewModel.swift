@@ -7,5 +7,5 @@ import UIKit
 
 class RecipesListViewModel: ViewModel {
     var recipesFullInfo: [Recipe] = []
-    var recipes: [RecipeCellStruct] = []
+    var recipes: [RecipeCellStruct]?
 }
