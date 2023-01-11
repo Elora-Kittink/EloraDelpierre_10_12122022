@@ -5,11 +5,15 @@
 
 import UtilsKit
 
+protocol RecipesListInteractable {
+    func refresh(ingredients: [String]?, displayFavorites: Bool)
+}
+
 class RecipesListInteractor: Interactor
 <
     RecipesListViewModel,
     RecipesListPresenter
-> {
+> , RecipesListInteractable {
     private let recipeWorker = RecipesWorker()
     
     
