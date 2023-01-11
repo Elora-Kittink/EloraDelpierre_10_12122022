@@ -8,7 +8,15 @@
 import Foundation
 import CoreDataUtilsKit
 
-struct RecipesWorker {
+protocol RecipesDataProviding {
+    func fetchRecipes(ingredients: [String]) async throws -> [Recipe]
+    func fetchRecipeFromId(id: String) -> Recipe?
+    func fetchFavorites() -> [Recipe]
+    func updateToAddInFavorite(recipeId: String)
+}
+
+// Une struct au lieu d'une class car on a pas besoin de garder une référence mémoire forte
+struct RecipesWorker: RecipesDataProviding {
     
 //    Fetch all recipes from API
     func fetchRecipes(ingredients: [String]) async throws -> [Recipe] {
