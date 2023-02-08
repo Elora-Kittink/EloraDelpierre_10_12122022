@@ -8,4 +8,5 @@ target 'Reciplease' do
     pod 'UtilsKit'
     pod 'SDWebImage'
     pod 'CoreDataUtilsKit', '~> 1.1'
+    pod 'netfox'
 end

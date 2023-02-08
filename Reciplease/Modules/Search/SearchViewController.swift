@@ -63,7 +63,7 @@ class SearchViewController: BaseViewController
         self.interactor.add(ingredient)
     }
     
-  @objc private func searchForRecipes() {
+    @IBAction private func searchForRecipes() {
 //        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
         let viewController = RecipesListViewController.fromStoryboard()
 //       on passe displayFavorite à False pour que RecipeList affiche la liste de recherche

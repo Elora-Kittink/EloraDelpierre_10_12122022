@@ -13,7 +13,7 @@ class RecipesListInteractor: Interactor
 <
     RecipesListViewModel,
     RecipesListPresenter
-> , RecipesListInteractable {
+> {
     private let recipeWorker = RecipesWorker()
     
     

@@ -8,6 +8,7 @@
 import UIKit
 import CoreDataUtilsKit
 import UtilsKit
+import netfox
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
+        NFX.sharedInstance().start()
+        
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
                 let documentsDirectory = paths.first
             log(.data, "Documents directory: \(documentsDirectory?.absoluteString ?? ":danger: No documents directory file !")")

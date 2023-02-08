@@ -24,7 +24,7 @@ final class SearchTests: XCTestCase {
     
     func testClear() async throws {
         let test = await BaseTest<SearchViewModel, SearchPresenter, SearchInteractor>()
-       await test.fire { interactor in
+        await test.fire { interactor in
             DispatchQueue.main.async {
                 interactor.clear()
             }
