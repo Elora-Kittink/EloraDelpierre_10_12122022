@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+@testable import Reciplease
 
 @MainActor class BaseTest
 <

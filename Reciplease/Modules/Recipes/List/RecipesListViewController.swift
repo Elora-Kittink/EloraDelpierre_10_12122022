@@ -27,7 +27,10 @@ class RecipesListViewController: BaseViewController
         var label = UILabel()
         
         if self.displayFavorites {
-            label.text = "Vous n'avez aucune recette en favoris, pour ajouter une recette en favoris cliquez sur le coeur en haut à droite sur la fiche recette"
+            label.text = """
+                Vous n'avez aucune recette en favoris, pour ajouter une recette en favoris cliquez
+                sur le coeur en haut à droite sur la fiche recette
+            """
         } else {
             label.text = "Aucune recette trouvée pour cette recherche, essayez autre chose !"
         }
@@ -73,7 +76,7 @@ extension RecipesListViewController: StoryboardProtocol {
 extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        min(tableView.frame.height / 4.5, 200)
+        min(tableView.frame.height / 1.5, 200)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,7 +95,6 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         cell.outletFilling = recipes[indexPath.row]
-        
         return cell
     }
     

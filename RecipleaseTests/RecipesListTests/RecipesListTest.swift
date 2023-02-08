@@ -7,54 +7,51 @@
 @testable import Reciplease
 import XCTest
 
-// pour tester si une fonction est appellée
-class PresenterSpy: RecipesListPresentable {
-    var isDisplayFunctionCalled = false
-    var recipes: [Recipe]?
-    
-    func display(recipeResponse: [Recipe]) {
-        isDisplayFunctionCalled = true
-        self.recipes = recipeResponse
-    }
-}
-
-// pour tester si une fonction est appellée
-struct WorkerSpy: RecipesDataProviding {
-    var recipesArray: [Recipe]?
-    var recipeFromId: Recipe?
-    
-    var isFetchRecipesCalled = false
-    var isFetchRecipeFromIdCalled = false
-    var isFetcheFavoritesCalled = false
-    var isUpdateToAddInFavoriteCalled = false
-    
-    func fetchRecipes(ingredients: [String]) {
-        isFetchRecipesCalled = true
-    }
-    func fetchRecipeFromId(id: String) -> Recipe? {
-        isFetchRecipeFromIdCalled = true
-    }
-    func fetchFavorites() -> [Recipe] {
-        isFetcheFavoritesCalled = true
-    }
-    func updateToAddInFavorite(recipeId: String) {
-        isUpdateToAddInFavoriteCalled = true
-    }
-}
-
 final class RecipesListTest: XCTestCase {
+    
+    func testRecipesListFavorite() async throws {
+        RecipesWorker().updateToAddInFavorite(recipeId: "5fca095dad0f25124c4fbc5d800e011b")
 
-//    override func setUpWithError() throws {
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//    }
-//
-//    override func tearDownWithError() throws {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//    }
-    func testInteractorFetchRecipesWorker() {
-//        Given
-        let workerSpy = WorkerSpy()
-        let SUT = RecipesListInteractor()
+        let test = await BaseTest<RecipesListViewModel, RecipesListPresenter, RecipesListInteractor>()
+        await test.fire { interactor in
+            DispatchQueue.main.async {
+                interactor.refresh(ingredients: nil, displayFavorites: true)
+            }
+        }
+
+        DispatchQueue.main.async {
+            XCTAssert(test.viewModel.recipes?.count ?? 0 > 0)
+        }
+    }
+    
+    func testRecipesListFetchRecipesSucces() async throws {
+        setenv("mockRecipeResponse", "RecipesResponseSucces", 1)
+        let test = await BaseTest<RecipesListViewModel, RecipesListPresenter, RecipesListInteractor>()
+        
+        await test.fire { interactor in
+            DispatchQueue.main.async {
+                interactor.refresh(ingredients: ["tofu"], displayFavorites: false)
+            }
+        }
+//        pourquoi on fait le xctassert sur "recipes" dans le viewModel mais ça ne le compte pas dans le coverage?
+        DispatchQueue.main.async {
+            XCTAssert(test.viewModel.recipes?.count ?? 0 > 0)
+        }
     }
 
+    func testRecipesListFetchRecipesFail() async throws {
+        let test = await BaseTest<RecipesListViewModel, RecipesListPresenter, RecipesListInteractor>()
+
+        setenv("mockRecipeResponse", "RecipesResponseFail", 1)
+        
+        await test.fire { interactor in
+            DispatchQueue.main.async {
+                interactor.refresh(ingredients: ["tofu"], displayFavorites: false)
+            }
+        }
+//        pourquoi on fait le xctassert sur "recipes" dans le viewModel mais ça ne le compte pas dans le coverage?
+        DispatchQueue.main.async {
+            XCTAssert(test.viewModel.recipes?.count ?? 0 == 0)
+        }
+    }
 }

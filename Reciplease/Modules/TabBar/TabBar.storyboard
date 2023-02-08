@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dtp-Og-QHN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dtp-Og-QHN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.97647058819999999" green="0.62352941179999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="myOrange"/>
                     </tabBar>
                     <connections>
                         <segue destination="oZE-X7-Z4I" kind="relationship" relationship="viewControllers" id="uvM-1H-r6A"/>
@@ -26,11 +30,13 @@
             </objects>
             <point key="canvasLocation" x="-288" y="-187"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="aDg-yL-SCH">
             <objects>
                 <navigationController id="oZE-X7-Z4I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UAc-JL-if8"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UAc-JL-if8" userLabel="Search">
+                        <color key="badgeColor" red="0.97647058819999999" green="0.62352941179999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xmW-9s-Pq9">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,11 +69,11 @@
             </objects>
             <point key="canvasLocation" x="85" y="992"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="FnJ-hn-zyd">
             <objects>
                 <navigationController id="JmX-wB-KOh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mt5-sH-Adu"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" selectedImage="heart.fill" id="mt5-sH-Adu" userLabel="Favorites"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yry-WU-WKG">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -81,4 +87,11 @@
             <point key="canvasLocation" x="748" y="567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="myOrange">
+            <color red="0.97647058823529409" green="0.62352941176470589" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

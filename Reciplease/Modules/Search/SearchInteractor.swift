@@ -11,9 +11,11 @@ class SearchInteractor: Interactor
     
     func add(_ ingredient: String) {
         self.presenter.display(newIngredients: ingredient)
+        self.presenter.display(loader: false)
     }
     
     func clear() {
         self.presenter.clear()
+        self.presenter.display(loader: false)
     }
 }

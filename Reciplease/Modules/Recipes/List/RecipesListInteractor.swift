@@ -23,7 +23,8 @@ class RecipesListInteractor: Interactor
         if displayFavorites {
             Task {
                 let data = recipeWorker.fetchFavorites()
-                    self.presenter.display(recipeResponse: data)
+                self.presenter.display(recipeResponse: data)
+                self.presenter.display(loader: false)
             }
         } else {
             self.presenter.display(loader: true)

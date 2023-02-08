@@ -17,6 +17,17 @@ class SearchViewController: BaseViewController
 	
 	// MARK: - Outlets
     @IBOutlet private weak var searchTable: UITableView!
+    
+//    private let searchButton: UIButton! = {
+//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+//        button.backgroundColor = UIColor(named: "myOrange")
+//        button.layer.cornerRadius = 25
+//        button.layer.shadowRadius = 10
+//        button.layer.shadowOpacity = 0.3
+//        button.setTitle("Search for recipes", for: .normal)
+//
+//        return button
+//    }()
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var textField: UITextField!
     
@@ -29,7 +40,15 @@ class SearchViewController: BaseViewController
         searchTable.delegate = self
         self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
         self.searchTable.hideKeyboardOnTap()
+        self.textField.layer.cornerRadius = 15
+//        view.addSubview(searchButton)
+//        searchButton.addTarget(self, action: #selector(searchForRecipes), for: .touchUpInside)
 	}
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        searchButton.frame = CGRect(x: view.frame.size.width / 4, y: view.frame.size.height - 170, width: 200, height: 50)
+    }
 	
 	// MARK: - Refresh
 	override func refreshUI() {
@@ -44,7 +63,7 @@ class SearchViewController: BaseViewController
         self.interactor.add(ingredient)
     }
     
-    @IBAction private func searchForRecipes() {
+  @objc private func searchForRecipes() {
 //        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
         let viewController = RecipesListViewController.fromStoryboard()
 //       on passe displayFavorite à False pour que RecipeList affiche la liste de recherche

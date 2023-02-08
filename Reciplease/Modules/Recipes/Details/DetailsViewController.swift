@@ -76,9 +76,9 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let title = PaddingLabel()
-        title.leadingInset = 20
-        title.text = "Ingredients"
+        let title = UILabel()
+        title.text = "Ingredients :"
+        title.font = UIFont.boldSystemFont(ofSize: 16)
         return title
     }
     

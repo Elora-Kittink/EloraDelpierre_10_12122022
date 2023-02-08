@@ -17,6 +17,7 @@ class DetailsInteractor: Interactor
             return
         }
         self.presenter.display(recipe: recipe)
+        self.presenter.display(loader: false)
     }
     
     func addInFavorites(id: String) {
@@ -26,5 +27,6 @@ class DetailsInteractor: Interactor
             return
         }
         self.presenter.display(recipe: recipe)
+        self.presenter.display(loader: false)
     }
 }
