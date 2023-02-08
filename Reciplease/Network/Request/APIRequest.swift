@@ -8,7 +8,7 @@
 import Foundation
 import NetworkUtilsKit
 
-struct APIRequest: RequestProtocol {
+struct APIRequest: RequestProtocol, MockProtocol {
     
     let ingredients: [String]
     
@@ -20,6 +20,7 @@ struct APIRequest: RequestProtocol {
     
     var method: NetworkUtilsKit.RequestMethod { .get }
     
+//    TODO: clé api
     var parameters: Parameters? {
         [
             "q": self.ingredients.joined(separator: ","),
@@ -27,5 +28,14 @@ struct APIRequest: RequestProtocol {
             "app_key": "64e25369e87fd7c9e9f9e664b7d4c207",
             "type": "public"
         ]
+    }
+    
+    var mockFileURL: URL? {
+        guard let path = Bundle.main.path(forResource: ProcessInfo.processInfo.environment["mockRecipeResponse"],
+                                          ofType: "json")
+        else { return nil }
+        let url = URL(fileURLWithPath: path)
+
+        return url
     }
 }

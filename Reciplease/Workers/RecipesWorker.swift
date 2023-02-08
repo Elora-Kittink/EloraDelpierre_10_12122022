@@ -12,13 +12,20 @@ struct RecipesWorker {
     
 //    Fetch all recipes from API
     func fetchRecipes(ingredients: [String]) async throws -> [Recipe] {
-        let allData = try await APIRequest(ingredients: ingredients).response(RecipeResponse.self)
+        let allData: RecipeResponse
+        
+        if ProcessInfo.processInfo.environment["isTestsRunning"] == "true" {
+            allData = try await APIRequest(ingredients: []).mock(RecipeResponse.self)
+        } else {
+            allData = try await APIRequest(ingredients: ingredients).response(RecipeResponse.self)
+        }
+        
 //        on transforme la réponse (au format struc de l'api) en tableau de notre format struc universelle
         let allRecipes = allData.hits.map { hit -> Recipe in
             Recipe(from: hit)
         }
         
-      let _ =  DB_Recipe.updateForEach(recipeResponse: allRecipes)
+        DB_Recipe.updateForEach(recipeResponse: allRecipes)
         try CoreDataManager.default.save()
         
         return allRecipes
@@ -32,7 +39,7 @@ struct RecipesWorker {
         return Recipe(from: DBRecipe)
     }
     
-//   récupère dans la BD en filtrant les recipes où isFavorite = true
+//   récupère dans la DB en filtrant les recipes où isFavorite = true
     func fetchFavorites() -> [Recipe] {
         let predicate = NSPredicate(format: "a_isFavorite == TRUE")
         let fetchRequest = DB_Recipe.getAll(predicate: predicate)
