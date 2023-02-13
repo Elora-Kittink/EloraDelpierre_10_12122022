@@ -23,10 +23,10 @@ struct APIRequest: RequestProtocol, MockProtocol {
 //    TODO: clé api
     var parameters: Parameters? {
         [
-            "q": "tofu",
-            "app_id": "88a2d686",
-            "app_key": "64e25369e87fd7c9e9f9e664b7d4c207",
-            "type": "public"
+            "app_id": Bundle.main.object(forInfoDictionaryKey: "APP_ID") as? String ?? "",
+            "app_key": Bundle.main.object(forInfoDictionaryKey: "APP_KEY") as? String ?? "",
+            "type": "public",
+            "q": self.ingredients.joined(separator: ",")
         ]
     }
     

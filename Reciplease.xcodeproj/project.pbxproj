@@ -11,6 +11,7 @@
 		D52EA415298BBE480017E028 /* RecipesResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = D5B2AE232976FCF1003DE0F3 /* RecipesResponseFail.json */; };
 		D52EA416298BBE510017E028 /* RecipesResponseSucces.json in Resources */ = {isa = PBXBuildFile; fileRef = D5B2AE212976FCE2003DE0F3 /* RecipesResponseSucces.json */; };
 		D52EA419298C05A70017E028 /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52EA418298C05A70017E028 /* UIView+CornerRadius.swift */; };
+		D55DA8DB299A35B50047BC9B /* keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D55DA8DA299A35B50047BC9B /* keys.xcconfig */; };
 		D569C59C2949D53600F86EBF /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D569C59B2949D53600F86EBF /* TabBar.storyboard */; };
 		D569C59F294A0DAA00F86EBF /* SearchSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569C59E294A0DAA00F86EBF /* SearchSectionHeader.swift */; };
 		D569C5A1294A0DB600F86EBF /* SearchSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D569C5A0294A0DB600F86EBF /* SearchSectionHeader.xib */; };
@@ -74,6 +75,7 @@
 		CD367923A9B6BA637161B2F5 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		CEAB76DA42E321051F1F2FBB /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
 		D52EA418298C05A70017E028 /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		D55DA8DA299A35B50047BC9B /* keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = keys.xcconfig; sourceTree = "<group>"; };
 		D569C59B2949D53600F86EBF /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		D569C59E294A0DAA00F86EBF /* SearchSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionHeader.swift; sourceTree = "<group>"; };
 		D569C5A0294A0DB600F86EBF /* SearchSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSectionHeader.xib; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				D5AA729E2993A804005379A9 /* Components */,
 				D52EA417298C05800017E028 /* Extensions */,
 				D5A01EB529783E2A00E922BD /* Base Test */,
+				D55DA8DA299A35B50047BC9B /* keys.xcconfig */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				D52EA415298BBE480017E028 /* RecipesResponseFail.json in Resources */,
 				D59F3F4129472B440003818F /* LaunchScreen.storyboard in Resources */,
 				D59AC569294B5C0F00B06B23 /* RecipeCell.xib in Resources */,
+				D55DA8DB299A35B50047BC9B /* keys.xcconfig in Resources */,
 				D5DBF3D4294788B400EEECAE /* Colors.xcassets in Resources */,
 				D59F3F3E29472B440003818F /* Images.xcassets in Resources */,
 				D5F99C1F295205FB0096FD86 /* Details.storyboard in Resources */,
@@ -753,6 +757,7 @@
 		};
 		D59F3F4329472B440003818F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D55DA8DA299A35B50047BC9B /* keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -899,7 +904,7 @@
 		};
 		D59F3F4729472B440003818F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD367923A9B6BA637161B2F5 /* Pods-Reciplease.release.xcconfig */;
+			baseConfigurationReference = CEAB76DA42E321051F1F2FBB /* Pods-Reciplease.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

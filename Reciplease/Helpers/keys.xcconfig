@@ -1,9 +1,2 @@
-//
-//  keys.xcconfig
-//  Reciplease
-//
-//  Created by Elora on 13/02/2023.
-//
-
-// Configuration settings file format documentation can be found at:
-// https://help.apple.com/xcode/#/dev745c5c974
+APP_KEY = 64e25369e87fd7c9e9f9e664b7d4c207
+APP_ID = 88a2d686
