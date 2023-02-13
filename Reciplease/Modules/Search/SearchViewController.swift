@@ -17,17 +17,6 @@ class SearchViewController: BaseViewController
 	
 	// MARK: - Outlets
     @IBOutlet private weak var searchTable: UITableView!
-    
-//    private let searchButton: UIButton! = {
-//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-//        button.backgroundColor = UIColor(named: "myOrange")
-//        button.layer.cornerRadius = 25
-//        button.layer.shadowRadius = 10
-//        button.layer.shadowOpacity = 0.3
-//        button.setTitle("Search for recipes", for: .normal)
-//
-//        return button
-//    }()
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var textField: UITextField!
     
@@ -41,13 +30,10 @@ class SearchViewController: BaseViewController
         self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
         self.searchTable.hideKeyboardOnTap()
         self.textField.layer.cornerRadius = 15
-//        view.addSubview(searchButton)
-//        searchButton.addTarget(self, action: #selector(searchForRecipes), for: .touchUpInside)
 	}
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        searchButton.frame = CGRect(x: view.frame.size.width / 4, y: view.frame.size.height - 170, width: 200, height: 50)
     }
 	
 	// MARK: - Refresh
@@ -70,10 +56,8 @@ class SearchViewController: BaseViewController
         //        et pas la liste de favoris
                 viewController.displayFavorites = false
                 viewController.ingredientsSearch = self.viewModel.ingredientsAdded
-                viewController.modalPresentationStyle = .fullScreen
-//                present(viewController, animated: true)
+//                viewController.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(viewController, animated: true)
-
     }
 }
 

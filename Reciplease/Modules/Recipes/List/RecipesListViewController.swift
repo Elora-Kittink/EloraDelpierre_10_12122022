@@ -95,6 +95,12 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         cell.outletFilling = recipes[indexPath.row]
+        
+//        Mark: accessibility
+//        cell.recipeImage.isAccessibilityElement = true
+        
+        
+        
         return cell
     }
     

@@ -31,7 +31,6 @@ class DetailsViewController: BaseViewController
         recipeInstructionsTableView.dataSource = self
         self.recipeInstructionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructionCell")
         view.backgroundColor = .systemBackground
-        
         self.interactor.add(id: recipeId)
 	}
     
@@ -79,7 +78,7 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
         let title = UILabel()
         title.text = "Ingredients :"
         title.backgroundColor = .white
-        title.font = UIFont.boldSystemFont(ofSize: 16)
+        title.font = UIFont.boldSystemFont(ofSize: 18)
         return title
     }
     
@@ -88,6 +87,7 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "instructionCell", for: indexPath)
        
         cell.textLabel?.text = self.viewModel.instructions[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
 
         return cell
     }

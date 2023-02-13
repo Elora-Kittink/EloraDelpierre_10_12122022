@@ -23,9 +23,6 @@ class RecipeCell: UITableViewCell, NibProtocol {
            
             let gradient = CAGradientLayer()
             gradient.colors = [UIColor.clear.cgColor, UIColor.gray.cgColor]
-//            gradient.startPoint = CGPoint(x: 0, y: self.timeView.frame.height)
-//            gradient.endPoint = CGPoint(x: self.timeView.frame.width, y: 0)
-//            gradient.locations = [0.25, 1]
             gradient.frame = self.timeView.bounds
             self.timeView.layer.insertSublayer(gradient, at: 0)
         }
@@ -40,6 +37,22 @@ class RecipeCell: UITableViewCell, NibProtocol {
             self.timeLabel.text = self.outletFilling.time
             self.recipeLabel.text = self.outletFilling.title
             self.ingredientsLabel.text = self.outletFilling.ingredients
+//            Mark: accessibility
+            self.recipeImage.isAccessibilityElement = true
+            self.recipeImage.accessibilityTraits = .image
+//            self.recipeImage.accessibilityValue = "\(String(describing: self.recipeLabel.text)) image"
+            
+            self.recipeLabel.isAccessibilityElement = true
+            self.recipeLabel.accessibilityTraits = .staticText
+//            self.recipeLabel.accessibilityValue = "\(String(describing: self.recipeLabel.text)) recipe"
+            
+            self.timeLabel.isAccessibilityElement = true
+            self.timeLabel.accessibilityTraits = .staticText
+//            self.timeLabel.accessibilityValue = "preparation time \(String(describing: self.timeLabel.text))"
+            
+            self.ingredientsLabel.isAccessibilityElement = true
+            self.ingredientsLabel.accessibilityTraits = .staticText
+//            self.ingredientsLabel.accessibilityValue = "ingredients \(String(describing: self.ingredientsLabel.text))"
         }
     }
 }

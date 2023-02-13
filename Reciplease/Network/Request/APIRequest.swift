@@ -20,7 +20,6 @@ struct APIRequest: RequestProtocol, MockProtocol {
     
     var method: NetworkUtilsKit.RequestMethod { .get }
     
-//    TODO: clé api
     var parameters: Parameters? {
         [
             "app_id": Bundle.main.object(forInfoDictionaryKey: "APP_ID") as? String ?? "",
