@@ -78,6 +78,7 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let title = UILabel()
         title.text = "Ingredients :"
+        title.backgroundColor = .white
         title.font = UIFont.boldSystemFont(ofSize: 16)
         return title
     }

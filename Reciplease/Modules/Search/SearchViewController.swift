@@ -64,15 +64,20 @@ class SearchViewController: BaseViewController
     }
     
     @IBAction private func searchForRecipes() {
-//        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
-        let viewController = RecipesListViewController.fromStoryboard()
-//       on passe displayFavorite à False pour que RecipeList affiche la liste de recherche
-//        et pas la liste de favoris
-        viewController.displayFavorites = false
-        viewController.ingredientsSearch = self.viewModel.ingredientsAdded
-        self.navigationController?.pushViewController(viewController, animated: true)
+        //        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
+                let viewController = RecipesListViewController.fromStoryboard()
+        //       on passe displayFavorite à False pour que RecipeList affiche la liste de recherche
+        //        et pas la liste de favoris
+                viewController.displayFavorites = false
+                viewController.ingredientsSearch = self.viewModel.ingredientsAdded
+                viewController.modalPresentationStyle = .fullScreen
+//                present(viewController, animated: true)
+                self.navigationController?.pushViewController(viewController, animated: true)
+
     }
 }
+
+
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
