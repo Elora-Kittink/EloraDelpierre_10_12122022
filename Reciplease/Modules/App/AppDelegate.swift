@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             log(.data, "fail core data init", error: error)
         }
-        UITabBar.appearance().backgroundColor = UIColor.white 
+        UITabBar.appearance().backgroundColor = UIColor.systemBackground
+    
+
         return true
     }
 

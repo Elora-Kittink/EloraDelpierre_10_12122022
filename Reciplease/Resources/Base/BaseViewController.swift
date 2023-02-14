@@ -41,6 +41,29 @@ class BaseViewController
 		print("💀 Deinit \(String(describing: self))")
 	}
 	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        https://stackoverflow.com/questions/71523445/how-to-use-scrolledgeappearance-in-ios-15
+
+        
+        let itemAppearance = UITabBarItemAppearance()
+        itemAppearance.normal.iconColor = .systemGray
+        itemAppearance.selected.iconColor = UIColor(named: "myOrange")
+        let appearance = UITabBarAppearance()
+        appearance.shadowImage = nil
+        appearance.backgroundImage = nil
+        appearance.shadowColor = .clear
+        appearance.backgroundColor = UIColor.systemBackground
+        appearance.stackedLayoutAppearance = itemAppearance
+        tabBarController?.tabBar.standardAppearance.backgroundColor = UIColor.systemBackground
+        tabBarController?.tabBar.standardAppearance = appearance
+
+        if #available(iOS 15.0, *) {
+            tabBarController?.tabBar.standardAppearance = appearance
+        }
+    }
+    
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		

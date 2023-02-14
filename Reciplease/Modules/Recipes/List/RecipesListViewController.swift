@@ -43,6 +43,7 @@ class RecipesListViewController: BaseViewController
         self.recipeTableView.delegate = self
         self.recipeTableView.dataSource = self
         self.recipeTableView.register(UINib(nibName: "RecipeCell", bundle: nil), forCellReuseIdentifier: "RecipeCell")
+        view.backgroundColor = .systemBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,12 +96,6 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         cell.outletFilling = recipes[indexPath.row]
-        
-//        Mark: accessibility
-//        cell.recipeImage.isAccessibilityElement = true
-        
-        
-        
         return cell
     }
     

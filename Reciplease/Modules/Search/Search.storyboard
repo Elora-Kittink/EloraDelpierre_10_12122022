@@ -36,7 +36,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmI-j9-U0I">
                                                     <rect key="frame" x="0.0" y="50" width="370" height="50"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lemon, pepper, tofu..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYB-KW-ITa">
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lemon, pepper, tofu..." textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYB-KW-ITa">
                                                             <rect key="frame" x="0.0" y="0.0" width="315.33333333333331" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="j6s-Tg-6Ie"/>
@@ -97,7 +97,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Uv-8P-X0A" secondAttribute="bottom" constant="30" id="6VM-nj-rU4"/>
                             <constraint firstItem="fsk-gq-n5i" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="9e7-F7-u41"/>
