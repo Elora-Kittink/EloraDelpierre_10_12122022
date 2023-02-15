@@ -23,15 +23,10 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
                 let ingredients = ingredientsArray.joined(separator: ", ")
 //     initialisation de la structure RecipeCellViewModel avec les données du tableau "ingredients" créé par le compactmap
                 
-                let date = Calendar.current.date(bySettingHour: 0,
-                                                 minute: Int(recipe.time),
-                                                 second: 0,
-                                                 of: Date())
-                
                 return RecipeCellStruct(image: recipe.image,
                                         title: recipe.title ?? "Sans titre",
                                         ingredients: ingredients,
-                                        time: date?.toString(format: "HH'h'mm") ?? "-",
+                                        time: "\(Int(recipe.time)) minutes",
                                         id: recipe.id ?? "")
             }
         //  on pousse au ViewModel le tableau de recette dans la forme affichable

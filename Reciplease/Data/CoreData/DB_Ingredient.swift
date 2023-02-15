@@ -16,7 +16,7 @@ extension DB_Ingredient: CoreDataModel {
 extension DB_Ingredient {
     
     static func updateForEach(recipeResponse: Recipe) -> [DB_Ingredient] {
-        return recipeResponse.ingredients.compactMap { ingredient in
+        recipeResponse.ingredients.compactMap { ingredient in
             guard let ingredientSavedInDB = DB_Ingredient.findOrCreate(with: ingredient.id)
             else {
                 return nil
@@ -31,6 +31,6 @@ extension DB_Ingredient {
     func updateOne(ingredient: (name: String, id: String), for recipe: Recipe) {
         self.a_id = ingredient.id
         self.a_name = ingredient.name
-//      l'attribution des recettes se fait automatiquement via la fonction updateOne de DB_Recipe
+        //      l'attribution des recettes se fait automatiquement via la fonction updateOne de DB_Recipe
     }
 }

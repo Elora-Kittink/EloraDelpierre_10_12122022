@@ -30,9 +30,12 @@ class SearchViewController: BaseViewController
         self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
         self.searchTable.hideKeyboardOnTap()
         self.textField.layer.cornerRadius = 15
-        self.textField.attributedPlaceholder = NSAttributedString(string: "Tofu, lemon, pepper...",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
-//        MARK: accessibility
+        self.textField.attributedPlaceholder = NSAttributedString(
+            string: "Tofu, lemon, pepper...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        
+// MARK: accessibility
+        
         self.textField.accessibilityValue = "choose your ingredient"
 	}
     

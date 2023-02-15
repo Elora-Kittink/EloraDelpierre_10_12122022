@@ -31,8 +31,19 @@ class DetailsViewController: BaseViewController
         recipeInstructionsTableView.dataSource = self
         self.recipeInstructionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructionCell")
         view.backgroundColor = .systemBackground
+        
         self.interactor.add(id: recipeId)
 	}
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let footer = UIView(frame: CGRect(origin: .zero,
+                                          size: CGSize(width: self.recipeInstructionsTableView.bounds.width,
+                                                       height: 20 + 50 )))
+        footer.backgroundColor = .systemBackground
+        self.recipeInstructionsTableView.tableFooterView = footer
+    }
     
 	// MARK: - Refresh
 	override func refreshUI() {

@@ -20,7 +20,6 @@
 		D59541BE296D689B00F42D7B /* RecipesListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59541BD296D689B00F42D7B /* RecipesListTest.swift */; };
 		D59541C0296D68B300F42D7B /* DetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59541BF296D68B300F42D7B /* DetailsTests.swift */; };
 		D59541C2296D68CF00F42D7B /* SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59541C1296D68CF00F42D7B /* SearchTests.swift */; };
-		D59541C5296DAF9300F42D7B /* WorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59541C4296DAF9300F42D7B /* WorkerTests.swift */; };
 		D59541C7296DAFCB00F42D7B /* RecipesResponseSucces.json in Resources */ = {isa = PBXBuildFile; fileRef = D59541C6296DAFCB00F42D7B /* RecipesResponseSucces.json */; };
 		D59541CB296DB01B00F42D7B /* RecipesResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = D59541CA296DB01B00F42D7B /* RecipesResponseFail.json */; };
 		D59ABC7B29534CD400510FFF /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D59ABC7929534CD400510FFF /* Reciplease.xcdatamodeld */; };
@@ -85,7 +84,6 @@
 		D59541BD296D689B00F42D7B /* RecipesListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListTest.swift; sourceTree = "<group>"; };
 		D59541BF296D68B300F42D7B /* DetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTests.swift; sourceTree = "<group>"; };
 		D59541C1296D68CF00F42D7B /* SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTests.swift; sourceTree = "<group>"; };
-		D59541C4296DAF9300F42D7B /* WorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTests.swift; sourceTree = "<group>"; };
 		D59541C6296DAFCB00F42D7B /* RecipesResponseSucces.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipesResponseSucces.json; sourceTree = "<group>"; };
 		D59541CA296DB01B00F42D7B /* RecipesResponseFail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipesResponseFail.json; sourceTree = "<group>"; };
 		D59ABC7A29534CD400510FFF /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 		D59541C3296DAF7C00F42D7B /* WorkerTests */ = {
 			isa = PBXGroup;
 			children = (
-				D59541C4296DAF9300F42D7B /* WorkerTests.swift */,
 				D59541C6296DAFCB00F42D7B /* RecipesResponseSucces.json */,
 				D59541CA296DB01B00F42D7B /* RecipesResponseFail.json */,
 			);
@@ -651,7 +648,6 @@
 			files = (
 				D59541C2296D68CF00F42D7B /* SearchTests.swift in Sources */,
 				D5A01EB829783ED000E922BD /* BaseTest.swift in Sources */,
-				D59541C5296DAF9300F42D7B /* WorkerTests.swift in Sources */,
 				D59541C0296D68B300F42D7B /* DetailsTests.swift in Sources */,
 				D59541BE296D689B00F42D7B /* RecipesListTest.swift in Sources */,
 			);

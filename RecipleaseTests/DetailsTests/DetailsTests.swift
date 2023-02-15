@@ -34,17 +34,4 @@ final class DetailsTests: XCTestCase {
             }
         }
     }
-//    //    TODO: ajouter un test sur func fetchRecipeFromId avec un mauvais id pour passer dans le else. Mais avant peut être faire la gestion de cette erreur
-//        func testFetchRecipeFromBadId() async throws {
-//            let testInteractor = await BaseTest<DetailsViewModel,
-//                                             DetailsPresenter, DetailsInteractor>()
-//            await testInteractor.fire { interactor in
-//                DispatchQueue.main.async {
-//                    interactor.add(id: "SomeBadId411")
-//                }
-//                DispatchQueue.main.async {
-//                    XCTAssert(<#T##expression: Bool##Bool#>)
-//                }
-//            }
-//        }
 }

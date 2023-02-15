@@ -15,9 +15,9 @@ protocol SearchSectionHeaderDelegate: AnyObject {
 
 class SearchSectionHeader: UIView, NibProtocol {
     
-    weak var delegate: SearchSectionHeaderDelegate?
-    
     @IBOutlet weak var yourIngredientsLabel: UILabel!
+    
+    weak var delegate: SearchSectionHeaderDelegate?
     
     @IBAction private func clearIngredients() {
         self.delegate?.didTapClear()
