@@ -14,4 +14,5 @@ class DetailsViewModel: ViewModel {
     var redirection: URL?
     var instructions: [String]!
     var favoriteButtonImage: UIImage!
+    var favoriteAccessibilityValue: String!
 }

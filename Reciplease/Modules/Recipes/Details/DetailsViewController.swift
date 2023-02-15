@@ -42,6 +42,7 @@ class DetailsViewController: BaseViewController
         self.recipeLabel.text = self.viewModel.title
         self.recipeTime.text = self.viewModel.time
         self.favoriteButton.setImage(self.viewModel.favoriteButtonImage, for: .normal)
+        favoriteButton.accessibilityValue = self.viewModel.favoriteAccessibilityValue
         recipeInstructionsTableView.reloadData()
 	}
 

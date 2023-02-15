@@ -17,6 +17,8 @@ class SearchSectionHeader: UIView, NibProtocol {
     
     weak var delegate: SearchSectionHeaderDelegate?
     
+    @IBOutlet weak var yourIngredientsLabel: UILabel!
+    
     @IBAction private func clearIngredients() {
         self.delegate?.didTapClear()
     }

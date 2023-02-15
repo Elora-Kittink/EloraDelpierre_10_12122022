@@ -47,6 +47,9 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="yourIngredientsLabel" destination="clq-u8-HvO" id="X0c-2C-KBB"/>
+            </connections>
             <point key="canvasLocation" x="-63.846153846153847" y="151.06635071090048"/>
         </view>
     </objects>

@@ -40,19 +40,19 @@ class RecipeCell: UITableViewCell, NibProtocol {
 //            Mark: accessibility
             self.recipeImage.isAccessibilityElement = true
             self.recipeImage.accessibilityTraits = .image
-//            self.recipeImage.accessibilityValue = "\(String(describing: self.recipeLabel.text)) image"
+            guard let recipeLabelText = self.recipeLabel.text else {
+                return
+            }
+            self.recipeImage.accessibilityValue = "\(recipeLabelText) image"
             
             self.recipeLabel.isAccessibilityElement = true
             self.recipeLabel.accessibilityTraits = .staticText
-//            self.recipeLabel.accessibilityValue = "\(String(describing: self.recipeLabel.text)) recipe"
             
             self.timeLabel.isAccessibilityElement = true
             self.timeLabel.accessibilityTraits = .staticText
-//            self.timeLabel.accessibilityValue = "preparation time \(String(describing: self.timeLabel.text))"
             
             self.ingredientsLabel.isAccessibilityElement = true
             self.ingredientsLabel.accessibilityTraits = .staticText
-//            self.ingredientsLabel.accessibilityValue = "ingredients \(String(describing: self.ingredientsLabel.text))"
         }
     }
 }

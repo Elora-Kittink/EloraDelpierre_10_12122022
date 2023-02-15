@@ -32,7 +32,7 @@ class RecipesListPresenter: Presenter<RecipesListViewModel> {
                                         title: recipe.title ?? "Sans titre",
                                         ingredients: ingredients,
                                         time: date?.toString(format: "HH'h'mm") ?? "-",
-                                        id: "test")
+                                        id: recipe.id ?? "")
             }
         //  on pousse au ViewModel le tableau de recette dans la forme affichable
         self.viewModel?.recipes = recipesInCellStructForm

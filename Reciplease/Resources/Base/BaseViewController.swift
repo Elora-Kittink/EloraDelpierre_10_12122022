@@ -62,6 +62,10 @@ class BaseViewController
         if #available(iOS 15.0, *) {
             tabBarController?.tabBar.standardAppearance = appearance
         }
+        
+        guard let items = tabBarController?.tabBar.items else { return }
+        items.first?.accessibilityValue = "Search page"
+        items.last?.accessibilityValue = "Favorites page"
     }
     
 	override func viewWillDisappear(_ animated: Bool) {

@@ -35,7 +35,7 @@
         <scene sceneID="aDg-yL-SCH">
             <objects>
                 <navigationController id="oZE-X7-Z4I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UAc-JL-if8" userLabel="Search">
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="UAc-JL-if8" userLabel="Search">
                         <color key="badgeColor" red="0.97647058819999999" green="0.62352941179999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xmW-9s-Pq9">
@@ -74,7 +74,7 @@
         <scene sceneID="FnJ-hn-zyd">
             <objects>
                 <navigationController id="JmX-wB-KOh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" selectedImage="heart.fill" id="mt5-sH-Adu" userLabel="Favorites"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="heart.fill" catalog="system" selectedImage="heart.fill" id="mt5-sH-Adu" userLabel="Favorites"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yry-WU-WKG">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

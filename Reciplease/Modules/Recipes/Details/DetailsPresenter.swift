@@ -26,8 +26,10 @@ class DetailsPresenter: Presenter<DetailsViewModel> {
         self.viewModel?.time = date?.toString(format: "HH'h'mm") ?? "-"
         if recipe.isFavorite {
             self.viewModel?.favoriteButtonImage = UIImage(systemName: "heart.fill")
+            self.viewModel?.favoriteAccessibilityValue = "recipe in favorites"
         } else {
             self.viewModel?.favoriteButtonImage = UIImage(systemName: "heart")
+            self.viewModel?.favoriteAccessibilityValue = "recipe not in favorites"
         }
         self.viewModel?.send()
     }
