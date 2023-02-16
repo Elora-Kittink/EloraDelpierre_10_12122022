@@ -31,7 +31,7 @@ class DetailsViewController: BaseViewController
         recipeInstructionsTableView.dataSource = self
         self.recipeInstructionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "instructionCell")
         view.backgroundColor = .systemBackground
-        
+//  fetch dans la BD la recette à afficher 
         self.interactor.add(id: recipeId)
 	}
     

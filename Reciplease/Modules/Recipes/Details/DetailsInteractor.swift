@@ -12,6 +12,7 @@ class DetailsInteractor: Interactor
 > {
     let worker = RecipesWorker()
     
+    //  fetch dans la BD la recette à afficher 
     func add(id: String) {
         guard let recipe = worker.fetchRecipeFromId(id: id) else {
             return
