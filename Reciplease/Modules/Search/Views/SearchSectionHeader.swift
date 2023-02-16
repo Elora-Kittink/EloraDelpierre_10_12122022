@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import UtilsKit
 
+// delegate qu'on retrouve dans le searchVC
 protocol SearchSectionHeaderDelegate: AnyObject {
     func didTapClear()
 }

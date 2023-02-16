@@ -11,6 +11,7 @@ class SearchPresenter: Presenter<SearchViewModel> {
     }
     
     func display(newIngredients: String) {
+// set fusionne les deux tableaux en éliminant les doublons
         let set = Set<String>(self.viewModel?.ingredientsAdded ?? []).union([newIngredients])
         self.viewModel?.ingredientsAdded = Array(set) 
         self.viewModel?.send()

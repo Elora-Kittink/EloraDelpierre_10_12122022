@@ -12,19 +12,19 @@ class SearchViewController: BaseViewController
     SearchPresenter,
     SearchInteractor
 > {
-
     
-	
-	// MARK: - Outlets
+    
+    
+    // MARK: - Outlets
     @IBOutlet private weak var searchTable: UITableView!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var textField: UITextField!
     
-	// MARK: - Variables
-	
-	// MARK: - View life cycle
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    // MARK: - Variables
+    
+    // MARK: - View life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
         searchTable.dataSource = self
         searchTable.delegate = self
         self.searchTable.register(UITableViewCell.self, forCellReuseIdentifier: "ingredientCell")
@@ -34,22 +34,19 @@ class SearchViewController: BaseViewController
             string: "Tofu, lemon, pepper...",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         
-// MARK: accessibility
+// accessibility
         
         self.textField.accessibilityValue = "choose your ingredient"
-	}
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
-	
-	// MARK: - Refresh
-	override func refreshUI() {
-		super.refreshUI()
+    
+    // MARK: - Refresh
+    override func refreshUI() {
+        super.refreshUI()
         searchTable.reloadData()
-	}
-
-	// MARK: - Actions
+    }
+    
+    // MARK: - Actions
+    
     @IBAction private func addIngredients() {
         guard let ingredient = self.textField.text
         else { return }
@@ -57,23 +54,24 @@ class SearchViewController: BaseViewController
     }
     
     @IBAction private func searchForRecipes() {
-        //        bien faire .fromStoryboard() pour créer le viewController lié au storyboard
-                let viewController = RecipesListViewController.fromStoryboard()
-        //       on passe displayFavorite à False pour que RecipeList affiche la liste de recherche
-        //        et pas la liste de favoris
-                viewController.displayFavorites = false
-                viewController.ingredientsSearch = self.viewModel.ingredientsAdded
-//                viewController.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(viewController, animated: true)
+//   bien faire .fromStoryboard() pour créer le viewController lié au storyboard
+        let viewController = RecipesListViewController.fromStoryboard()
+//   on passe displayFavorite à False pour que RecipeList affiche la liste de recherche
+//   et pas la liste de favoris
+        viewController.displayFavorites = false
+        viewController.ingredientsSearch = self.viewModel.ingredientsAdded
+//  viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 
+    // MARK: tableview
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        // ici ma vue "your ingredients"
+        // xib avec "your ingredient" et clear button
         let view = SearchSectionHeader.fromNib()
         view.delegate = self
         view.yourIngredientsLabel.accessibilityValue = "selected"
@@ -92,12 +90,14 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
         
         cell.textLabel?.text = self.viewModel.ingredientsAdded[indexPath.row]
-               
+        
         return cell
     }
 }
 
+// delegate pour le xib searchSectionHeader
 extension SearchViewController: SearchSectionHeaderDelegate {
+// clear button action
     func didTapClear() {
         self.interactor.clear()
     }
