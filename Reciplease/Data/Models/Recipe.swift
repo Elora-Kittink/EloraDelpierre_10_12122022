@@ -7,9 +7,9 @@
 
 import Foundation
 
-// structure universelle qui peut être obtenue
-//soit depuis la structure réponse de l'api,
-//soit par la structure de la base de donnée
+// structure universelle qui peut être obtenue :
+// - soit depuis la structure réponse de l'api,
+// - soit par la structure de la base de donnée
 
 struct Recipe {
     

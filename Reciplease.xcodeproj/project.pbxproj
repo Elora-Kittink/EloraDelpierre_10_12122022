@@ -257,13 +257,6 @@
 			path = WorkerTests;
 			sourceTree = "<group>";
 		};
-		D596479D2965C3CC009814DB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		D59ABC7729534AB900510FFF /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,7 +455,6 @@
 		D5F99C15295200650096FD86 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				D596479D2965C3CC009814DB /* Views */,
 				D5F99C17295200A50096FD86 /* DetailsViewController.swift */,
 				D5F99C18295200A50096FD86 /* DetailsInteractor.swift */,
 				D5F99C16295200A50096FD86 /* DetailsPresenter.swift */,

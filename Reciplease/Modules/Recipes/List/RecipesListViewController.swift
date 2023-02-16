@@ -6,6 +6,19 @@
 import UtilsKit
 import UIKit
 
+
+// protocol pour instancier une nouvelle page
+// Appelé apr le button search for recipes du SearchVC
+extension RecipesListViewController: StoryboardProtocol {
+    static var storyboardName: String {
+        "Recipes"
+    }
+
+    static var identifier: String? {
+        "RecipesListViewController"
+    }
+}
+
 class RecipesListViewController: BaseViewController
 <
 	RecipesListViewModel,
@@ -56,23 +69,13 @@ class RecipesListViewController: BaseViewController
 	// MARK: - Refresh
 	override func refreshUI() {
 		super.refreshUI()
-// TODO: réécrire ou commenter cette ligne incompréhensible 
+//        si recipes est vide backgroundview = emptylabel  sinon = nil
         recipeTableView.backgroundView = (self.viewModel.recipes?.isEmpty ?? false) ? self.emptyLabel : nil
         recipeTableView.reloadData()
 	}
-
-	// MARK: - Actions
 }
 
-extension RecipesListViewController: StoryboardProtocol {
-    static var storyboardName: String {
-        "Recipes"
-    }
-    
-    static var identifier: String? {
-        "RecipesListViewController"
-    }
-}
+    // MARK: TableView
 
 extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     

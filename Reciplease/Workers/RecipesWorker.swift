@@ -8,15 +8,10 @@
 import Foundation
 import CoreDataUtilsKit
 
-protocol RecipesDataProviding {
-    func fetchRecipes(ingredients: [String]) async throws -> [Recipe]
-    func fetchRecipeFromId(id: String) -> Recipe?
-    func fetchFavorites() -> [Recipe]
-    func updateToAddInFavorite(recipeId: String)
-}
 
-// Une struct au lieu d'une class car on a pas besoin de garder une référence mémoire forte
-struct RecipesWorker: RecipesDataProviding {
+
+// Une struct au lieu d'une class car pas besoin de garder une référence mémoire forte
+struct RecipesWorker {
     
 //    Fetch all recipes from API
     func fetchRecipes(ingredients: [String]) async throws -> [Recipe] {
@@ -39,7 +34,7 @@ struct RecipesWorker: RecipesDataProviding {
         return allRecipes
     }
     
-//    Fetch in DB with id
+//    Fetch in DB with id for detail view
     func fetchRecipeFromId(id: String) -> Recipe? {
         guard let DBRecipe = DB_Recipe.get(with: id) else {
             return nil
@@ -47,7 +42,7 @@ struct RecipesWorker: RecipesDataProviding {
         return Recipe(from: DBRecipe)
     }
     
-//   récupère dans la DB en filtrant les recipes où isFavorite = true
+//   récupère dans la DB en filtrant les recipes où isFavorite = true pour la vue recipeList des favoris
     func fetchFavorites() -> [Recipe] {
         let predicate = NSPredicate(format: "a_isFavorite == TRUE")
         let fetchRequest = DB_Recipe.getAll(predicate: predicate)
@@ -57,11 +52,11 @@ struct RecipesWorker: RecipesDataProviding {
         return favoriteRecipes
     }
     
+//    Ajoute ou supprime une recette des favoris
 //    récupère une recipe avec son id, toggle la valeur de son attribut, et sauvegarde cette modif
     func updateToAddInFavorite(recipeId: String) {
         guard let recipe = DB_Recipe.get(with: recipeId) else { return }
         recipe.a_isFavorite.toggle()
-//        commenter ce que fait la ligne ci dessous
         try? CoreDataManager.default.save()
     }
 }

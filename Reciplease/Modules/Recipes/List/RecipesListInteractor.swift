@@ -17,8 +17,8 @@ class RecipesListInteractor: Interactor
     private let recipeWorker = RecipesWorker()
     
     
-    // Appel le worker, si c'est pour afficher la liste des favoris, alors on appelle fetchFavorites
-    //    si c'est pour afficher les résultats d'une recherche par ingrédients on appelle fetchRecipes
+// Appelle le worker, si c'est pour afficher la liste des favoris, alors on appelle fetchFavorites
+//    si c'est pour afficher les résultats d'une recherche par ingrédients on appelle fetchRecipes
     func refresh(ingredients: [String]?, displayFavorites: Bool) {
         if displayFavorites {
             Task {

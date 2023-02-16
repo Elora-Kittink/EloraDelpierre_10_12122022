@@ -6,10 +6,6 @@
 import UIKit
 import UtilsKit
 
-protocol RecipesListPresentable {
-    func display(recipeResponse: [Recipe])
-}
-
 class RecipesListPresenter: Presenter<RecipesListViewModel> {
     
     //    fonction qui prends le tableau de RecipeStruct et le transforme en tableau de RecipeCellViewModel

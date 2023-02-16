@@ -51,6 +51,7 @@ class SearchViewController: BaseViewController
         guard let ingredient = self.textField.text
         else { return }
         self.interactor.add(ingredient)
+        self.textField.text = ""
     }
     
     @IBAction private func searchForRecipes() {
