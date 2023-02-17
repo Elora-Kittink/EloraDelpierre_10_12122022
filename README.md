@@ -9,18 +9,22 @@ The application is organized in two parts, a search part and a favorites part.
 
 As I'm in a work-study program, I chose to use the pods and the Clean Architecture customized by my CTO to practice their use.
 
-<p align="center"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.30.01.png" height="500"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.30.31.png" height="500"><img src="screenshots/Screenshot_3.png" height="500" title="remove a film"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.32.17.png" height="500"></p>
+<p align="center"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.30.01.png" height="500"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.30.31.png" height="500"><img src="Reciplease_screenshots/Simulator Screen Shot - iPhone 14 Pro - 2023-02-17 at 18.32.17.png" height="500"></p>
 
 ## Pods 
 
   <a href="https://github.com/rgmc95/UtilsKit"><img alt="Swift" src="https://img.shields.io/badge/UtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret
+
   <a href="https://github.com/rgmc95/CoreDataUtilsKit"><img alt="Swift" src="https://img.shields.io/badge/CoreDataUtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret 
+
   <a href="https://github.com/rgmc95/NetworkUtilsKit"><img alt="Swift" src="https://img.shields.io/badge/NetworkUtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret
+
   <a href="https://cocoapods.org/pods/SDWebImage"><img alt="Swift" src="https://img.shields.io/badge/SDWebImage-02569H?style=flat-square"
 /></a>
+
 <img alt="Swift" src="https://img.shields.io/badge/Combine-02569H?style=flat-square"
 />
 
