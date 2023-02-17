@@ -57,6 +57,9 @@ The View Model :
 - Contains the data in their form directly displayable by the view controller
 - Keeps reference to nobody
 
+<p align="center"><img src="Reciplease_screenshots/cleanArchiExomind.jpg" height="500"></p>
+
+
 
 ## Install
 
