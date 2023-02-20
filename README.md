@@ -16,10 +16,10 @@ As I'm in a work-study program, I chose to use the pods and the Clean Architectu
   <a href="https://github.com/rgmc95/UtilsKit"><img alt="Swift" src="https://img.shields.io/badge/UtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret
 
-  <a href="https://github.com/rgmc95/CoreDataUtilsKit"><img alt="Swift" src="https://img.shields.io/badge/CoreDataUtilsKit-02569B?style=flat-square"
+  <a href="[https://github.com/rgmc95/CoreDataUtilsKit](https://cocoapods.org/pods/coredatautilskit)"><img alt="Swift" src="https://img.shields.io/badge/CoreDataUtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret 
 
-  <a href="https://github.com/rgmc95/NetworkUtilsKit"><img alt="Swift" src="https://img.shields.io/badge/NetworkUtilsKit-02569B?style=flat-square"
+  <a href="[https://github.com/rgmc95/NetworkUtilsKit](https://cocoapods.org/pods/NetworkUtilsKit)"><img alt="Swift" src="https://img.shields.io/badge/NetworkUtilsKit-02569B?style=flat-square"
 /></a> by Michael Coqueret
 
   <a href="https://cocoapods.org/pods/SDWebImage"><img alt="Swift" src="https://img.shields.io/badge/SDWebImage-02569H?style=flat-square"
