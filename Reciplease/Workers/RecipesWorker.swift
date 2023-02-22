@@ -27,7 +27,6 @@ struct RecipesWorker {
         let allRecipes = allData.hits.map { hit -> Recipe in
             Recipe(from: hit)
         }
-//  TODO: on garde ou pas le stockage automatique dans la bd de toutes les recettes recherchées? pas très green
         DB_Recipe.updateForEach(recipeResponse: allRecipes)
         try CoreDataManager.default.save()
         

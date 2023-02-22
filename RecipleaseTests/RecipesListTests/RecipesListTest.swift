@@ -33,7 +33,6 @@ final class RecipesListTest: XCTestCase {
                 interactor.refresh(ingredients: ["tofu"], displayFavorites: false)
             }
         }
-//        pourquoi on fait le xctassert sur "recipes" dans le viewModel mais ça ne le compte pas dans le coverage?
         DispatchQueue.main.async {
             XCTAssert(test.viewModel.recipes?.count ?? 0 > 0)
         }
@@ -49,7 +48,6 @@ final class RecipesListTest: XCTestCase {
                 interactor.refresh(ingredients: ["tofu"], displayFavorites: false)
             }
         }
-//        pourquoi on fait le xctassert sur "recipes" dans le viewModel mais ça ne le compte pas dans le coverage?
         DispatchQueue.main.async {
             XCTAssert(test.viewModel.recipes?.count ?? 0 == 0)
         }

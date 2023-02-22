@@ -26,7 +26,6 @@ struct Recipe {
     init(from response: RecipeResponse.HitResponse) {
         self.image = URL(response.recipe.image)
         self.title = response.recipe.label
-//        est ce que ici il faut pas que je fasse un tableau de tupples pour avoir le nom de l'ingrédient ET son id
         self.ingredients = response.recipe.ingredients.compactMap { ingredient -> (name: String, id: String) in
             (name: ingredient.food, id: ingredient.foodId)
         }

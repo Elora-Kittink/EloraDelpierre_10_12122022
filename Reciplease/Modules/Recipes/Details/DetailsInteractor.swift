@@ -12,7 +12,7 @@ class DetailsInteractor: Interactor
 > {
     let worker = RecipesWorker()
     
-    //  fetch dans la BD la recette à afficher 
+//      fetch dans la BD la recette à afficher
     func add(id: String) {
         guard let recipe = worker.fetchRecipeFromId(id: id) else {
             return
@@ -23,7 +23,6 @@ class DetailsInteractor: Interactor
     
     func addInFavorites(id: String) {
         self.worker.updateToAddInFavorite(recipeId: id)
-//        faire un interactor.display ici pour mettre à jour l'UI après la mise en favoris?
         guard let recipe = self.worker.fetchRecipeFromId(id: id) else {
             return
         }

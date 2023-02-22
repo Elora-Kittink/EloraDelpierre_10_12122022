@@ -43,10 +43,7 @@ class BaseViewController
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        https://stackoverflow.com/questions/71523445/how-to-use-scrolledgeappearance-in-ios-15
-
-        
+    
         let itemAppearance = UITabBarItemAppearance()
         itemAppearance.normal.iconColor = .systemGray
         itemAppearance.selected.iconColor = UIColor(named: "myOrange")
